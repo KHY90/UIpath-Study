@@ -79,9 +79,10 @@
       <AssemblyReference>UiPath.UIAutomation.Activities.Design</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_변수유형" sap:VirtualizedContainerService.HintSize="817,803" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_변수유형" sap:VirtualizedContainerService.HintSize="817,1156" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="dateToday" />
       <Variable x:TypeArguments="s:DateTime" Name="dateNow" />
@@ -93,7 +94,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="실습 | Sequence" sap:VirtualizedContainerService.HintSize="468,780" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="실습 | Sequence" sap:VirtualizedContainerService.HintSize="468,1133" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +133,24 @@
           <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
         </Assign.Value>
       </Assign>
-      <WriteLine DisplayName="출력 | Write Line" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[String.Concat(&quot;오늘은 &quot;, dateToday.ToString(&quot;yyyy/MM/dd&quot;), &quot; &quot;, dateNow.ToString(&quot;HH:mm:ss&quot;), &quot;입니다.&quot;)]" />
+      <WriteLine DisplayName="출력 | Write Line" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[String.Concat(&quot;오늘은 &quot;, dateToday.ToString(&quot;yyyy/MM/dd&quot;), &quot; &quot;, dateNow.ToString(&quot;HH:mm:ss&quot;), &quot;입니다.&quot;)]" />
+      <Assign DisplayName="날짜 | Assign" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dateToday]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.Today]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="시간 | Assign" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dateNow]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <WriteLine DisplayName="출력 | Write Line" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[String.Concat(&quot;오늘은 &quot;, dateToday.ToString(&quot;yyyy년 MM월 dd일&quot;), &quot; &quot;, dateNow.ToString(&quot;HH시 mm분 ss초&quot;), &quot;입니다.&quot;)]" />
     </Sequence>
   </Sequence>
 </Activity>

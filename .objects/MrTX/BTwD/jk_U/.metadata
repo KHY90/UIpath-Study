@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome NAVER",
+  "Type": "Screen",
+  "Id": "jk_UKF-mlUiLVnoEznphbA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/jk_UKF-mlUiLVnoEznphbA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/BTwDpl24YUWJdCUTeTZx_Q",
+  "Created": "2025-03-31T03:35:33.8905015Z",
+  "Updated": "2025-03-31T03:35:33.8905015Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

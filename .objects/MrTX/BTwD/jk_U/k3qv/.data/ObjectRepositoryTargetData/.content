@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NXZhn72ZikywchtKUqm6bw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="930, 1073, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="a17eb7e9-a865-4958-af6b-eb040007c5bc" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의정부 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="374, 705, 260, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='경기도 의정부시' check:innerText='경기도 의정부시' /&gt;" Guid="6baafa91-8c71-454d-ab35-c7a5e378c02b" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="1d94a440b5758a9e760c7fea94f6992a.png" xmlns="">0eTyztumxH0GknEHXnQjLHQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

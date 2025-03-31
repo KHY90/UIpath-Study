@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="WHpCRp60q0alLMxiTKINpQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="930, 969, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="279e0a65-7311-40ef-a0a9-742daa948559" ScopeSelectorArgument="&lt;html app='chrome.exe' title='춘천 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="374, 601, 366, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='강원특별자치도 춘천시' check:innerText='강원특별자치도 춘천시' /&gt;" Guid="c452a52a-03eb-403f-a4c2-2e057d7c93b0" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a5a7be90ac4fa93e3bee1063b4f4b2ff.png" xmlns="">0FN-uCGKWMUWvtvoq3mSY0Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

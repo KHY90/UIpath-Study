@@ -25,7 +25,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "01_이론/01_변수생성.xaml",
+      "Path": "01_이론/01_1_변수생성.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "intNumber&Sequence_1",
@@ -37,13 +37,42 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "01_이론/02_변수유형.xaml",
+      "Path": "01_이론/01_2_변수유형.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strName&Sequence_1",
-        "intAge&Sequence_1",
+        "objVar&Sequence_1",
+        "dateToday&Sequence_1",
         "dateNow&Sequence_1",
-        "dateToday&Sequence_1"
+        "intAge&Sequence_1",
+        "strName&Sequence_1",
+        "strNum&Sequence_1",
+        "blEven&Sequence_1",
+        "strScore&Sequence_1",
+        "blClass&Sequence_1",
+        "arrNum&Sequence_1",
+        "intIndex&Sequence_1",
+        "arrSubject&Sequence_1",
+        "intSbIndex&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/02_브라우저자동화_모던.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strTemp&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/02_1_날씨미션.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrTemp&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

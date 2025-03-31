@@ -1,0 +1,14 @@
+﻿{
+  "Name": "경기도 의정부시(1)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "k3qvAVLo2E-JzmsehM_SJw",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/k3qvAVLo2E-JzmsehM_SJw",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/jk_UKF-mlUiLVnoEznphbA",
+  "Created": "2025-03-31T04:29:07.9437986Z",
+  "Updated": "2025-03-31T04:29:07.9437986Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

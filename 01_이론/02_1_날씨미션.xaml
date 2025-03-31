@@ -1,0 +1,222 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_02_1_날씨미션" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="_02_1_날씨미션_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_02_1_날씨미션" sap:VirtualizedContainerService.HintSize="817,2769" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="arrTemp" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;날씨 미션 작업 시작&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="1. 네이버 접속&#xD;&#xA;2. 검색창 입력(&quot;의정부 날씨&quot;, &quot;서울 날씨&quot;, &quot;춘천 날씨&quot;)&#xD;&#xA;3. 날씨 정보 가져오기(Array)&#xD;&#xA;4. 출력하기" DisplayName="실습 | Sequence" sap:VirtualizedContainerService.HintSize="536,2405" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome NAVER" sap:VirtualizedContainerService.HintSize="502,2237" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="c8210f25-38b2-4b49-8915-80e3250e9b1c" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1996" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Text="의정부 날씨[k(Enter)]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="feFcUKTgfkOq0EzoaEG8gQ" DesignTimeRectangle="866, 465, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="c9d88845-6395-463c-8a30-ff7f5041cd9f" InformativeScreenshot="62e9a33d7c34489051017af64af7e7e6.png" Reference="zqQg-QMm0kO7nRa_3zCrag/pTbw-UXtMUCY1YTHeejp2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrTemp]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[{"", "", ""}]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NGetText DisplayName="Get Text '경기도 의정부시'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" TextString="[arrTemp(0)]" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="NXZhn72ZikywchtKUqm6bw" DesignTimeRectangle="930, 1073, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="a17eb7e9-a865-4958-af6b-eb040007c5bc" InformativeScreenshot="1d94a440b5758a9e760c7fea94f6992a.png" Reference="zqQg-QMm0kO7nRa_3zCrag/k3qvAVLo2E-JzmsehM_SJw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의정부 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="374, 705, 260, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='경기도 의정부시' check:innerText='경기도 의정부시' /&gt;" Guid="6baafa91-8c71-454d-ab35-c7a5e378c02b" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'NAVER'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="WBO8iCl3r0W-wTdhtERoQw" DesignTimeRectangle="338, 401, 48, 44" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='spnew2 ico_logo' aaname='NAVER' check:innerText='NAVER' /&gt;" Guid="85f4519f-3c83-4755-a257-e1f80cf09804" InformativeScreenshot="11b73303165bf3e8b274a174fefc8f42.png" Reference="zqQg-QMm0kO7nRa_3zCrag/G78sRsscZkmLH25wlXUcAw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='서울 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="418, 393, 1056, 60" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='box_window' placeholder='검색어를 입력해 주세요.' aaname='' /&gt;" Guid="c9309833-d246-4ce6-aef5-3c321d5f29b2" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Text="서울 날씨[k(Enter)]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="feFcUKTgfkOq0EzoaEG8gQ" DesignTimeRectangle="866, 465, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="c9d88845-6395-463c-8a30-ff7f5041cd9f" InformativeScreenshot="62e9a33d7c34489051017af64af7e7e6.png" Reference="zqQg-QMm0kO7nRa_3zCrag/pTbw-UXtMUCY1YTHeejp2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NGetText DisplayName="Get Text '서울특별시(1)'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" TextString="[arrTemp(1)]" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="cFta3uxSLEScx4knbs4ddQ" DesignTimeRectangle="930, 1073, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="e1f5f582-232a-4183-8732-c033500335cc" InformativeScreenshot="322e9f834f7447e35cbe6ccab91e03df.png" Reference="zqQg-QMm0kO7nRa_3zCrag/TVxiZMpUJUeJ2Aktd9wIig" ScopeSelectorArgument="&lt;html app='chrome.exe' title='춘천 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="374, 705, 366, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='강원특별자치도 춘천시' check:innerText='강원특별자치도 춘천시' /&gt;" Guid="d3fdf6ec-9e19-4cb5-8882-cfd7b75f8aa7" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'NAVER'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="WBO8iCl3r0W-wTdhtERoQw" DesignTimeRectangle="338, 401, 48, 44" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='spnew2 ico_logo' aaname='NAVER' check:innerText='NAVER' /&gt;" Guid="85f4519f-3c83-4755-a257-e1f80cf09804" InformativeScreenshot="11b73303165bf3e8b274a174fefc8f42.png" Reference="zqQg-QMm0kO7nRa_3zCrag/G78sRsscZkmLH25wlXUcAw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='서울 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="418, 393, 1056, 60" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='box_window' placeholder='검색어를 입력해 주세요.' aaname='' /&gt;" Guid="c9309833-d246-4ce6-aef5-3c321d5f29b2" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Text="춘천 날씨[k(Enter)]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="feFcUKTgfkOq0EzoaEG8gQ" DesignTimeRectangle="866, 465, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="c9d88845-6395-463c-8a30-ff7f5041cd9f" InformativeScreenshot="62e9a33d7c34489051017af64af7e7e6.png" Reference="zqQg-QMm0kO7nRa_3zCrag/pTbw-UXtMUCY1YTHeejp2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NGetText DisplayName="Get Text '서울특별시(1)'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" TextString="[arrTemp(2)]" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="cFta3uxSLEScx4knbs4ddQ" DesignTimeRectangle="930, 1073, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="e1f5f582-232a-4183-8732-c033500335cc" InformativeScreenshot="322e9f834f7447e35cbe6ccab91e03df.png" Reference="zqQg-QMm0kO7nRa_3zCrag/TVxiZMpUJUeJ2Aktd9wIig" ScopeSelectorArgument="&lt;html app='chrome.exe' title='춘천 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="374, 705, 366, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='강원특별자치도 춘천시' check:innerText='강원특별자치도 춘천시' /&gt;" Guid="d3fdf6ec-9e19-4cb5-8882-cfd7b75f8aa7" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[String.Format(&quot;의정부 날씨 : {0}, 서울 날씨 : {1}, 춘천 날씨 : {2}&quot;, arrTemp(0), arrTemp(1), arrTemp(2))]" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="-6P0mSgdKkWsIXf_rPK5xQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIDSURBVFhHxdPNalNRFAXgDWsiDpzcp3Do0/iT3J80uYkTJ458j4IOO/EFJJQWEWsbW1Ob0Fpje1tvtIg0FFEKDRjEuuTcQGr2uZ7pWfBNztl75ZA2gvNWG+ctetIW/GjSJ8G3Jn0SnKX0STBq0CfB1zp9Enyp0yfByQJ9Enyq0SkPGeTpnGt5TAyTq5lhzGDYtObMrtWnCHLzIQ5ZhTrPLnrEUfVq5mOsR4qYXatPERwndDq4p3uLPBgtEVk4nTmK9HURs2v1KYIsodOg/AGTP794K39EHEaFsphdq08RHMR0en9X986STU5540ONGIT6qojZtfoUwSCi07s7uncuS9/XiP3yb8nsWn2KYD+i0677ASbVz4v6qIjZtfoUwV5Ip/5t3Wvl4vKnPipidq0+RbAb0mmn/AHjy4k+smJ2rT5F0I/otF3+J0iGj/WRFbNr9SmCXkSnbvkDgn6Di6NVfTwXs2v1KYK3MZ22yn+GQa/F69sx98Yn+moWs2v1KYJuTKfN/zxgp0W8CXmz/5Dj3+X/D2bX6lMEWwmdOuW/8aB7f3r/OmSSPdHXRcyu1acINhM6bTgeMJup8OlZR48Uu1afIujU6LQeEq8qSpXYiP+ZS6Znes7s6j5FsG4+xB/B2gJ9Erys0yfBizp9Ejxv0CfBaoM+CVZS+iRYTttYTulJ+y+etvk9lxDJEwAAAABJRU5ErkJggg==" InformativeScreenshot="935b9b5c6960117198dc9dd4210db8de.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/jk_UKF-mlUiLVnoEznphbA" Selector="&lt;html app='chrome.exe' title='NAVER' /&gt;" Title="NAVER" Url="https://www.naver.com/" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;날씨 미션 작업 종료&quot;]" />
+  </Sequence>
+</Activity>

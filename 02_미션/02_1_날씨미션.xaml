@@ -111,7 +111,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;날씨 미션 작업 시작&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="1. 네이버 접속&#xD;&#xA;2. 검색창 입력(&quot;의정부 날씨&quot;, &quot;서울 날씨&quot;, &quot;춘천 날씨&quot;)&#xD;&#xA;3. 날씨 정보 가져오기(Array)&#xD;&#xA;4. 출력하기" DisplayName="실습 | Sequence" sap:VirtualizedContainerService.HintSize="536,2405" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="1. 네이버 접속&#xA;2. 검색창 입력(&quot;의정부 날씨&quot;, &quot;서울 날씨&quot;, &quot;춘천 날씨&quot;)&#xA;3. 날씨 정보 가져오기(Array)&#xA;4. 출력하기" DisplayName="실습 | Sequence" sap:VirtualizedContainerService.HintSize="536,2405" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,7 +132,13 @@
               </sap:WorkflowViewStateService.ViewState>
               <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="c8210f25-38b2-4b49-8915-80e3250e9b1c" Text="의정부 날씨[k(Enter)]" Version="V4">
                 <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="feFcUKTgfkOq0EzoaEG8gQ" DesignTimeRectangle="866, 465, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="c9d88845-6395-463c-8a30-ff7f5041cd9f" InformativeScreenshot="62e9a33d7c34489051017af64af7e7e6.png" Reference="zqQg-QMm0kO7nRa_3zCrag/pTbw-UXtMUCY1YTHeejp2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                  <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="itmajybPB0uNwauP4tSAjg" DesignTimeRectangle="866, 465, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="715ca13c-b70f-4321-83af-e5e174605231" InformativeScreenshot="5383dff57e84d337b1c518afdc0c8f9e.png" Reference="zqQg-QMm0kO7nRa_3zCrag/pTbw-UXtMUCY1YTHeejp2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="786, 499, 48, 48" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='' aaname='' /&gt;" Guid="d14b97d7-6777-47b6-a0e4-187eaf7f6631" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
               <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -147,7 +153,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="NXZhn72ZikywchtKUqm6bw" DesignTimeRectangle="930, 1073, 265, 123" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;strong' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' class='' /&gt;" Guid="a17eb7e9-a865-4958-af6b-eb040007c5bc" InformativeScreenshot="1d94a440b5758a9e760c7fea94f6992a.png" Reference="zqQg-QMm0kO7nRa_3zCrag/k3qvAVLo2E-JzmsehM_SJw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의정부 날씨 : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="374, 705, 260, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl class='title' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='title' tag='H2' type='' aaname='경기도 의정부시' check:innerText='경기도 의정부시' /&gt;" Guid="6baafa91-8c71-454d-ab35-c7a5e378c02b" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>

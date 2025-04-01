@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome 서울의 날씨  네이버 검색",
+  "Type": "Screen",
+  "Id": "ehU5WNVBYEWBdABBf3VX3A",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/ehU5WNVBYEWBdABBf3VX3A",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/BTwDpl24YUWJdCUTeTZx_Q",
+  "Created": "2025-04-01T01:47:21.835231Z",
+  "Updated": "2025-04-01T01:47:21.835231Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

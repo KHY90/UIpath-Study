@@ -69,7 +69,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "01_이론/02_1_날씨미션.xaml",
+      "Path": "02_미션/02_1_날씨미션.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "arrTemp&Sequence_1"
@@ -79,12 +79,37 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "01_이론/02_1_1_날씨_리팩토링.xaml",
+      "Path": "02_미션/02_1_1_날씨_리팩토링.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "index&Sequence_1",
+        "strTemp&Sequence_1",
+        "arrLocation&Sequence_1",
         "arrResult&Sequence_1",
-        "arrLocation&Sequence_1"
+        "index&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/02_브라우저자동화_클래식.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "brNaver&Sequence_1",
+        "uibrowser&Sequence_1",
+        "strTemp&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/02_브라우저자동화반복문_클래식.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "brNaver&Sequence_1",
+        "arrLocation&Sequence_1",
+        "strTemp&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

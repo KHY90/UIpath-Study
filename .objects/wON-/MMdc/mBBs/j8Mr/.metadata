@@ -1,0 +1,14 @@
+﻿{
+  "Name": "NAVER",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "j8MrIO8LrUa6G9duXMm_4w",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/j8MrIO8LrUa6G9duXMm_4w",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/mBBsb5HOq0GOmrhSpi_Wgw",
+  "Created": "2025-04-01T00:45:51.3536379Z",
+  "Updated": "2025-04-01T00:45:51.3536379Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

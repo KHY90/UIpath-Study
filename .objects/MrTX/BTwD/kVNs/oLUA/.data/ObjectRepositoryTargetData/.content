@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LxfmK8EKZ0KK8FFMlv7UZA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="naver.com" DesignTimeRectangle="2042, 500, 47, 47" DesignTimeScaleFactor="2" ElementType="Icon" FullSelectorArgument="&lt;webctrl parentid='search-btn' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-btn' tag='path' type='' class='' aaname='' /&gt;" Guid="135c77c3-474a-438c-8ad4-ab3455983cd5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1910, 465, 60, 116" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ke_kbd_btn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ke_kbd_btn' tag='BUTTON' type='button' class='btn_keyboard' aaname='  입력도구  ' check:text='입력도구' /&gt;" Guid="984088f3-8d8d-4729-8c39-488fb90e3bce" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e18b77a12cbe34e0f5da35fe52c42a38.png" xmlns="">0QehCc4cyC0i7KFCpy5euYg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

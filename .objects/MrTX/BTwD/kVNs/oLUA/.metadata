@@ -1,0 +1,14 @@
+﻿{
+  "Name": "SVG search-btn",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "oLUAr8s43UCL3c4f7AFAVQ",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/oLUAr8s43UCL3c4f7AFAVQ",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/kVNs20oLJkSyyuQk8WEWfg",
+  "Created": "2025-04-02T03:26:06.7035862Z",
+  "Updated": "2025-04-02T03:26:06.7035862Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

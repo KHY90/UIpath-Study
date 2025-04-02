@@ -151,8 +151,8 @@
       "Path": "02_미션/03_DT추출1_네이버뉴스들.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ExtractDataTable&Sequence_1",
-        "arrSearch&Sequence_1"
+        "arrSearch&Sequence_1",
+        "ExtractDataTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

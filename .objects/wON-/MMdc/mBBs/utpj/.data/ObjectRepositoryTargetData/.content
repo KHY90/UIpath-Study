@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Luptcor2zkeqElq8-sExzg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="278, 507, 2320, 4313" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='pack_group' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='pack_group' tag='DIV' type='' aaname='  ' check:innerText='UIPath 뉴스검색 결과&amp;#xA;관련도순&amp;#xA;최신순&amp;#xA;모바일 메인 언론사&amp;#xA;옵션&amp;#xA;언론사 선정&amp;#xA;언론사가 선정한 주요기사 혹은 심층기획 기사입니다. 네이버 메인에서 보고 싶은 언론사를 구독하세요' /&gt;" Guid="38aa69de-822b-48d0-a848-dc71a08615da" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="110d37215c6bafe8dd11c50dd60ea456.png" xmlns="">0LngZlYaCKE2rZ4uQwUpn-A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScroll</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

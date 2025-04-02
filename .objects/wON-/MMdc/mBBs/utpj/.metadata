@@ -1,0 +1,13 @@
+﻿{
+  "Name": "UIPath 뉴스검색 결과 var nx_c…",
+  "Type": "Element",
+  "Id": "utpjeDhj1Uu0AVP1UvIOMw",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/utpjeDhj1Uu0AVP1UvIOMw",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/mBBsb5HOq0GOmrhSpi_Wgw",
+  "Created": "2025-04-02T15:15:28.3169878Z",
+  "Updated": "2025-04-02T15:15:28.3169878Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IzrrX56Y8EeFQIpwY8XkgQ" Reference="zqQg-QMm0kO7nRa_3zCrag/9Im0mxL2OES62zYwaBlubQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="13, 255, 2850, 11475" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl idx='3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='' aaname='' check:innerText='NAVER&amp;#xA;한글 입력기&amp;#xA;자동완성 레이어&amp;#xA;검색&amp;#xA;사용자 링크&amp;#xA; 흰둥이90&amp;#xA;내정보 보기&amp;#xA;네이버톡&amp;#xA;알림&amp;#xA;메일&amp;#xA;서비스 더보기&amp;#xA;전체&amp;#xA;뉴스&amp;#xA;블로그&amp;#xA;카페&amp;#xA;이미지&amp;#xA;지식iN&amp;#xA;인플루언서&amp;#xA;동영상&amp;#xA;쇼핑' /&gt;" Guid="6c71dbdc-3fd3-4732-bc99-042cb2385244" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="37a8eccaad5486fafe15734e31fc3ccb.png" xmlns="">0ShZaiNYBaEy0X63fzVYY1A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScroll</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

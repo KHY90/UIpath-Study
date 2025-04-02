@@ -43,6 +43,8 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -103,7 +105,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_DT추출1_네이버뉴스들" sap:VirtualizedContainerService.HintSize="817,2522" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_DT추출1_네이버뉴스들" sap:VirtualizedContainerService.HintSize="572,2358" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrSearch" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
@@ -113,7 +115,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;미션 시작&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="572,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;미션 시작&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -121,14 +123,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence sap2010:Annotation.AnnotationText="1. 검색어 Array 변수 선언&#xD;&#xA;    arrSearch ={&quot;UIPath&quot;, &quot;RPA&quot;, &quot;OpenAI&quot; }&#xD;&#xA;2. 네이버 홈 화면에서 차례대로 검색&#xD;&#xA;3. 뉴스 -&gt; 최신순&#xD;&#xA;4. Table Extraction으로 검색된 검색된 DT를 추출 (50개 이상)&#xD;&#xA;   (출처, 뉴스 타이틀, 뉴스 타이틀 링크)&#xD;&#xA;5. DT를 추출 엑셀 파일로 기록&#xD;&#xA;    - 파일명 : 네이버뉴스들.xlsx &#xD;&#xA;    - 시트명 : 각 검색어" DisplayName="네이버 뉴스 DT 추출 자동화 미션 | Sequence" sap:VirtualizedContainerService.HintSize="520,2394" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="1. 검색어 Array 변수 선언&#xA;    arrSearch ={&quot;UIPath&quot;, &quot;RPA&quot;, &quot;OpenAI&quot; }&#xA;2. 네이버 홈 화면에서 차례대로 검색&#xA;3. 뉴스 -&gt; 최신순&#xA;4. Table Extraction으로 검색된 검색된 DT를 추출 (50개 이상)&#xA;   (출처, 뉴스 타이틀, 뉴스 타이틀 링크)&#xA;5. DT를 추출 엑셀 파일로 기록&#xA;    - 파일명 : 네이버뉴스들.xlsx &#xA;    - 시트명 : 각 검색어" DisplayName="네이버 뉴스 DT 추출 자동화 미션 | Sequence" sap:VirtualizedContainerService.HintSize="572,2230" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="검색어 | Assign" sap:VirtualizedContainerService.HintSize="486,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="검색어 | Assign" sap:VirtualizedContainerService.HintSize="538,115" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arrSearch]</OutArgument>
         </Assign.To>
@@ -136,93 +138,83 @@
           <InArgument x:TypeArguments="s:String[]">[{"UIPath", "RPA", "OpenAI"}]</InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome NAVER(2)" sap:VirtualizedContainerService.HintSize="486,2031" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d3574a95-d731-44d5-a292-154932e1a202" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="explorer.exe" sap:VirtualizedContainerService.HintSize="538,1867" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d3574a95-d731-44d5-a292-154932e1a202" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,1790" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="504,1626" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="418,1728" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrSearch]">
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,1564" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrSearch]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,1604" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,1440" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Text="[currentText]" Version="V4">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT query'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Text="[currentText + &quot;[k(Enter)]&quot;]" Version="V4">
                         <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="d6_XQL7jLEueIdsSZDPaMQ" DesignTimeRectangle="866, 361, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="099b8756-dcb8-4e2f-8d0f-b4f325a84790" InformativeScreenshot="d47379563e2eb808da35edfc362d5245.png" Reference="zqQg-QMm0kO7nRa_3zCrag/TUWtU1TC1km1JA4pe4x7FQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="naver.com" DesignTimeRectangle="866, 361, 960, 116" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='query' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='query' tag='INPUT' type='search' class='search_input' placeholder='검색어를 입력해 주세요.' aaname='검색어를 입력해 주세요.' /&gt;" Guid="e673689c-632a-4066-8862-6fcdf7594ff1" InformativeScreenshot="f7a2824090e353e402118c1a245727d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
                               <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                <uix:Target DesignTimeRectangle="786, 395, 48, 48" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="d8418144-684d-4be4-8018-0503df10824d" SearchSteps="Selector, FuzzySelector" />
+                                <uix:Target DesignTimeRectangle="786, 395, 48, 48" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="c44f2bd3-b2b1-4fc6-96c5-8ea693a92f24" SearchSteps="Selector, FuzzySelector" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>
                         </uix:NTypeInto.Target>
                       </uix:NTypeInto>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG search-btn'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '뉴스'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
                         <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="naver.com" ContentHash="De1ir9Q1zUmcK4bCuq42qA" DesignTimeRectangle="2040, 395, 50, 50" DesignTimeScaleFactor="2" ElementType="Icon" FullSelectorArgument="&lt;webctrl id='search-btn' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-btn' tag='svg' type='' class='' aaname='  ' /&gt;" Guid="3f028761-7bf0-4e43-a64e-85ff03227965" InformativeScreenshot="722475172798669492c2208bb95b299f.png" Reference="zqQg-QMm0kO7nRa_3zCrag/8Oca4hKjyEqz7WUgIuLekg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NAVER' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="486, 409, 107, 72" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='뉴스' aria-role='tab' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='뉴스' aria-role='tab' tag='A' type='' class='tab' check:innerText='뉴스' /&gt;" Guid="c5eb58ca-cf5f-4781-a7b1-8086e8b2c603" InformativeScreenshot="0c84bf8ced9c4804235021340ca911c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
                               <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                <uix:Target DesignTimeRectangle="1910, 361, 60, 116" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ke_kbd_btn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ke_kbd_btn' tag='BUTTON' type='button' class='btn_keyboard' aaname='  입력도구  ' check:text='입력도구' /&gt;" Guid="fbbe7f14-d43b-4795-be8a-4e7588af931e" SearchSteps="Selector, FuzzySelector" />
+                                <uix:Target DesignTimeRectangle="338, 297, 48, 44" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='spnew2 ico_logo' aaname='NAVER' check:innerText='NAVER' /&gt;" Guid="cf6e99f8-bfcd-4279-877d-58589d6ddb6c" SearchSteps="Selector, FuzzySelector" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>
                         </uix:NClick.Target>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '뉴스'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '최신순'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
                         <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="qellJhgZgkmFwFvy-M1ZxA" DesignTimeRectangle="486, 409, 107, 72" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='뉴스' aria-role='tab' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='뉴스' aria-role='tab' tag='A' type='' class='tab' check:innerText='뉴스' /&gt;" Guid="ede7fd29-8fd5-44d2-9f1c-362b4f3608bb" InformativeScreenshot="4721f085b0834d74acf2fa69fd36155e.png" Reference="zqQg-QMm0kO7nRa_3zCrag/H4vXSi4M8UuKCSC8cEqQCg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="1163, 561, 104, 41" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='최신순' aria-role='option' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='최신순' aria-role='option' tag='A' type='' class='item' check:innerText='최신순' /&gt;" Guid="108dfa37-5814-4b09-8c2d-f5538a765e78" InformativeScreenshot="acdd8f7622fc7e9a3839b803354e90ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
                               <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                <uix:Target DesignTimeRectangle="338, 297, 48, 44" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='spnew2 ico_logo' aaname='NAVER' check:innerText='NAVER' /&gt;" Guid="2e4dad6c-1d4b-46db-b829-a17b1c4af756" SearchSteps="Selector, FuzzySelector" />
+                                <uix:Target DesignTimeRectangle="338, 297, 48, 44" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='spnew2 ico_logo' aaname='NAVER' check:innerText='NAVER' /&gt;" Guid="7ebec320-e91a-4705-a2f0-57eb890e1a31" SearchSteps="Selector, FuzzySelector" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>
                         </uix:NClick.Target>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '최신순'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="9995fwfVG0eSM-0mdln24w" DesignTimeRectangle="1163, 561, 104, 41" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='최신순' aria-role='option' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='최신순' aria-role='option' tag='A' type='' class='item' check:innerText='최신순' /&gt;" Guid="328bb843-5d58-4d27-aebd-2b76171b12ce" InformativeScreenshot="fef0d379054bb046348f210c1e130c91.png" Reference="zqQg-QMm0kO7nRa_3zCrag/bqJ8MAStXU6TNP63R_683g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                <uix:Target DesignTimeRectangle="997, 561, 134, 41" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='option' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' tag='A' type='' class='item' aaname='관련도순' check:innerText='관련도순' /&gt;" Guid="84c092f3-d781-43ec-a57f-d2800675049a" SearchSteps="Selector, FuzzySelector" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NClick.Target>
-                      </uix:NClick>
-                      <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="382,279" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V4">
-                        <uix:NMouseScroll.SearchedElement>
-                          <uix:SearchedElement>
-                            <uix:SearchedElement.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:SearchedElement.Timeout>
-                          </uix:SearchedElement>
-                        </uix:NMouseScroll.SearchedElement>
+                      <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'NAVER 검색 RPA 한글 입력기 입력도…'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" MovementUnits="30" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
+                        <uix:NMouseScroll.Target>
+                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" ContentHash="IzrrX56Y8EeFQIpwY8XkgQ" DesignTimeRectangle="13, 255, 2850, 11475" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl idx='3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='' aaname='' check:innerText='NAVER&amp;#xA;한글 입력기&amp;#xA;자동완성 레이어&amp;#xA;검색&amp;#xA;사용자 링크&amp;#xA; 흰둥이90&amp;#xA;내정보 보기&amp;#xA;네이버톡&amp;#xA;알림&amp;#xA;메일&amp;#xA;서비스 더보기&amp;#xA;전체&amp;#xA;뉴스&amp;#xA;블로그&amp;#xA;카페&amp;#xA;이미지&amp;#xA;지식iN&amp;#xA;인플루언서&amp;#xA;동영상&amp;#xA;쇼핑' /&gt;" Guid="6c71dbdc-3fd3-4732-bc99-042cb2385244" InformativeScreenshot="37a8eccaad5486fafe15734e31fc3ccb.png" IsResponsive="True" Reference="zqQg-QMm0kO7nRa_3zCrag/9Im0mxL2OES62zYwaBlubQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                        </uix:NMouseScroll.Target>
                       </uix:NMouseScroll>
-                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='출처'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='뉴스 제목'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='뉴스 제목 Url'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='a' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
-                        <uix:NExtractData.NextLink>
-                          <uix:TargetAnchorable BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="372, 1390, 240, 48" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='디지털투데이' idx='3' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='디지털투데이' type='' tag='A' class='info press' check:innerText='디지털투데이' /&gt;" Guid="c8aeb2d6-d2e7-4bf3-9c27-7f1c5a749994" ImageBase64="" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                        </uix:NExtractData.NextLink>
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='출처'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='뉴스 제목'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='뉴스 제목 Url'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column css-selector='.news_tit' name='Column1' attr='fulltext' name2='Column2' attr2='href' /&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="d3574a95-d731-44d5-a292-154932e1a202" Version="V4">
                         <uix:NExtractData.Target>
-                          <uix:TargetAnchorable BrowserURL="https://search.naver.com/search.naver?where=news&amp;query=UIPath&amp;sm=tab_opt&amp;sort=1&amp;photo=0&amp;field=0&amp;pd=0&amp;ds=&amp;de=&amp;docid=&amp;related=0&amp;mynews=0&amp;office_type=0&amp;office_section_code=0&amp;news_office_checked=&amp;nso=so%3Add%2Cp%3Aall&amp;is_sug_officeid=0&amp;office_category=0&amp;service_area=0" DesignTimeRectangle="372, 778, 1268, 3586" DesignTimeScaleFactor="2" ElementType="List" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;ul' tag='UL' /&gt;" Guid="c35af320-1663-44f8-a7f6-323eff77dabc" InformativeScreenshot="45466e2c8c6de0c6d3774c07873b2c50.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                          <uix:TargetAnchorable BrowserURL="https://search.naver.com/search.naver?where=news&amp;query=UIPath&amp;sm=tab_opt&amp;sort=1&amp;photo=0&amp;field=0&amp;pd=0&amp;ds=&amp;de=&amp;docid=&amp;related=0&amp;mynews=0&amp;office_type=0&amp;office_section_code=0&amp;news_office_checked=&amp;nso=so%3Add%2Cp%3Aall&amp;is_sug_officeid=0&amp;office_category=0&amp;service_area=0" DesignTimeRectangle="372, -16054, 1268, 20758" DesignTimeScaleFactor="2" ElementType="List" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;ul' tag='UL' /&gt;" Guid="1a51e2cf-d511-4336-b24f-828ffb2231a4" InformativeScreenshot="2f1e13b1532e0cb43195575f82a890e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UIPath : 네이버 뉴스검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NExtractData.Target>
                       </uix:NExtractData>
-                      <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="382,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[currentText]" WorkbookPath="C:\Users\kimhwayeon\Desktop\RPA\Study\RPA 2025 수업\Data\Output\네이버뉴스들.xlsx" />
-                      <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="382,106" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.naver.com/" Version="V4" />
+                      <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[currentText]" WorkbookPath="C:\Users\kimhwayeon\Desktop\RPA\Study\RPA 2025 수업\Data\Output\네이버뉴스들.xlsx" />
+                      <Assign DisplayName="초기화 | Assign" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="sd:DataTable">[ExtractDataTable]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable()]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.naver.com/" Version="V4" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
@@ -231,11 +223,11 @@
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="TGPqXPnpPEuffSvN3bA8Yg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIDSURBVFhHxdPNalNRFAXgDWsiDpzcp3Do0/iT3J80uYkTJ458j4IOO/EFJJQWEWsbW1Ob0Fpje1tvtIg0FFEKDRjEuuTcQGr2uZ7pWfBNztl75ZA2gvNWG+ctetIW/GjSJ8G3Jn0SnKX0STBq0CfB1zp9Enyp0yfByQJ9Enyq0SkPGeTpnGt5TAyTq5lhzGDYtObMrtWnCHLzIQ5ZhTrPLnrEUfVq5mOsR4qYXatPERwndDq4p3uLPBgtEVk4nTmK9HURs2v1KYIsodOg/AGTP794K39EHEaFsphdq08RHMR0en9X986STU5540ONGIT6qojZtfoUwSCi07s7uncuS9/XiP3yb8nsWn2KYD+i0677ASbVz4v6qIjZtfoUwV5Ip/5t3Wvl4vKnPipidq0+RbAb0mmn/AHjy4k+smJ2rT5F0I/otF3+J0iGj/WRFbNr9SmCXkSnbvkDgn6Di6NVfTwXs2v1KYK3MZ22yn+GQa/F69sx98Yn+moWs2v1KYJuTKfN/zxgp0W8CXmz/5Dj3+X/D2bX6lMEWwmdOuW/8aB7f3r/OmSSPdHXRcyu1acINhM6bTgeMJup8OlZR48Uu1afIujU6LQeEq8qSpXYiP+ZS6Znes7s6j5FsG4+xB/B2gJ9Erys0yfBizp9Ejxv0CfBaoM+CVZS+iRYTttYTulJ+y+etvk9lxDJEwAAAABJRU5ErkJggg==" InformativeScreenshot="82e04e0485c7ac849b2d3056d0ad20c2.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/5NZCAcxTtEyGsn7qZYjeHA" Selector="&lt;html app='chrome.exe' title='NAVER' /&gt;" Title="NAVER" Url="https://www.naver.com/" Version="V1" />
+          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="OzdCk5YRMkavnjEDaYRD2w" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIDSURBVFhHxdPNalNRFAXgDWsiDpzcp3Do0/iT3J80uYkTJ458j4IOO/EFJJQWEWsbW1Ob0Fpje1tvtIg0FFEKDRjEuuTcQGr2uZ7pWfBNztl75ZA2gvNWG+ctetIW/GjSJ8G3Jn0SnKX0STBq0CfB1zp9Enyp0yfByQJ9Enyq0SkPGeTpnGt5TAyTq5lhzGDYtObMrtWnCHLzIQ5ZhTrPLnrEUfVq5mOsR4qYXatPERwndDq4p3uLPBgtEVk4nTmK9HURs2v1KYIsodOg/AGTP794K39EHEaFsphdq08RHMR0en9X986STU5540ONGIT6qojZtfoUwSCi07s7uncuS9/XiP3yb8nsWn2KYD+i0677ASbVz4v6qIjZtfoUwV5Ip/5t3Wvl4vKnPipidq0+RbAb0mmn/AHjy4k+smJ2rT5F0I/otF3+J0iGj/WRFbNr9SmCXkSnbvkDgn6Di6NVfTwXs2v1KYK3MZ22yn+GQa/F69sx98Yn+moWs2v1KYJuTKfN/zxgp0W8CXmz/5Dj3+X/D2bX6lMEWwmdOuW/8aB7f3r/OmSSPdHXRcyu1acINhM6bTgeMJup8OlZR48Uu1afIujU6LQeEq8qSpXYiP+ZS6Znes7s6j5FsG4+xB/B2gJ9Erys0yfBizp9Ejxv0CfBaoM+CVZS+iRYTttYTulJ+y+etvk9lxDJEwAAAABJRU5ErkJggg==" InformativeScreenshot="bcdffb3498cb8c7b333f44cfb435a440.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/mBBsb5HOq0GOmrhSpi_Wgw" Selector="&lt;html app='chrome.exe' title='NAVER' /&gt;" Title="NAVER" Url="https://www.naver.com/" Version="V1" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;미션 종료&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="572,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;미션 종료&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

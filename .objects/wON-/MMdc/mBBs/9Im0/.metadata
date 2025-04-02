@@ -1,0 +1,13 @@
+﻿{
+  "Name": "NAVER 검색 RPA 한글 입력기 입력도…",
+  "Type": "Element",
+  "Id": "9Im0mxL2OES62zYwaBlubQ",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/9Im0mxL2OES62zYwaBlubQ",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/mBBsb5HOq0GOmrhSpi_Wgw",
+  "Created": "2025-04-02T15:26:35.9426622Z",
+  "Updated": "2025-04-02T15:26:35.9426622Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

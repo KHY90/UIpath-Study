@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KEvxZBD0hUmfl82bomxKGg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.naver.com/search.naver" DesignTimeRectangle="13, 255, 2880, 1462" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;ctrl name='UIPath : 네이버 뉴스검색' role='document' /&gt;" FuzzySelectorArgument="&lt;ctrl name='UIPath : 네이버 뉴스검색' role='document' automationid='' check:text='https://search.naver.com/search.naver?where=news&amp;amp;query=UIPath&amp;amp;sm=tab_opt&amp;amp;sort=1&amp;amp;photo=0&amp;amp;field=0&amp;amp;pd=0&amp;amp;ds=&amp;amp;de=&amp;amp;docid=&amp;amp;related=0&amp;amp;mynews=0&amp;amp;office_type=0&amp;amp;office_section_code=0&amp;amp;news_office_checked=&amp;amp;nso=so%3Add%2Cp%3Aall&amp;amp;is_sug_officeid=0&amp;amp;office_category=0&amp;amp;service_area=0' /&gt;" Guid="4f33ff79-a023-4331-8d7d-007ef4a208b4" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='UIPath : 네이버 뉴스검색 - Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e8fb828611a8add2b95a75941adbb808.png" xmlns="">0LeewlqNv-UahfbzFYjws0Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScrollSearchedElement</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

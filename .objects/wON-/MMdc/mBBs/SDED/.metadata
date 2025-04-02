@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Mouse Scroll 'UIPath 뉴스검색 결과 var nx_c…'",
+  "Type": "Element",
+  "Id": "SDEDCdDorUWv0BJvZU2zlg",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/SDEDCdDorUWv0BJvZU2zlg",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/mBBsb5HOq0GOmrhSpi_Wgw",
+  "Created": "2025-04-02T15:22:29.077514Z",
+  "Updated": "2025-04-02T15:22:29.077514Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

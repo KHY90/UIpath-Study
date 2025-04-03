@@ -1,0 +1,13 @@
+﻿{
+  "Name": "NAVER 검색 UIPath 한글 입력기 …",
+  "Type": "Element",
+  "Id": "CH9D03n5MEG2mIE0Wrp4sA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/CH9D03n5MEG2mIE0Wrp4sA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/zb1C9owr0kyWHL0jMmrNLA",
+  "Created": "2025-04-03T01:24:02.7758628Z",
+  "Updated": "2025-04-03T01:24:02.7758628Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "최신순",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "wt7NPckpnUS2SpA7QDy-tQ",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/wt7NPckpnUS2SpA7QDy-tQ",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/zb1C9owr0kyWHL0jMmrNLA",
+  "Created": "2025-04-03T01:14:59.0162588Z",
+  "Updated": "2025-04-03T01:14:59.0162588Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

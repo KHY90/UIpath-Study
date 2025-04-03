@@ -105,13 +105,19 @@
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_01_ACME_Login" sap:VirtualizedContainerService.HintSize="1158,2421" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_01_ACME_Login" sap:VirtualizedContainerService.HintSize="1158,2598" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPassword" />
       <Variable x:TypeArguments="x:Boolean" Name="blLogOut" />
+      <Variable x:TypeArguments="ui:UiElement" Name="uiLogout" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -119,7 +125,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1158,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ACME Login 시작&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="1. Get Credential 액티비티로 아이디, 비번 가져오기&#xA;2. ACME 사이트 접근&#xA;3. 로그인되어 있으면 로그아웃&#xA;4. 로그아웃 상태면 로그인 진행&#xA;5. 아이디와 비번 입력&#xD;&#xA;6. 로그인 버튼 클릭" DisplayName="자동로그인 | Sequence" sap:VirtualizedContainerService.HintSize="1158,2000" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence sap2010:Annotation.AnnotationText="1. Get Credential 액티비티로 아이디, 비번 가져오기&#xA;2. ACME 사이트 접근&#xA;3. 로그인되어 있으면 로그아웃&#xA;4. 로그아웃 상태면 로그인 진행&#xA;5. 아이디와 비번 입력&#xA;6. 로그인 버튼 클릭" DisplayName="자동로그인 | Sequence" sap:VirtualizedContainerService.HintSize="1158,2177" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,28 +133,35 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NCheckState DisplayName="Check App State 'Log Out'" sap:VirtualizedContainerService.HintSize="1124,1800" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="5" Version="V4">
+      <uix:NCheckState sap2010:Annotation.AnnotationText="uiLogout 으로 ui element 변수(output element)로 설정함. " DisplayName="Check App State 'Log Out'" sap:VirtualizedContainerService.HintSize="1124,1977" sap2010:WorkflowViewState.IdRef="NCheckState_1" OutUiElement="[uiLogout]" Timeout="5" Version="V4">
         <uix:NCheckState.IfExists>
-          <Sequence sap2010:Annotation.AnnotationText="해당 UI 요소가 있을 때" DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="518,1480" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence sap2010:Annotation.AnnotationText="해당 UI 요소가 있을 때" DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="518,1704" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="484,1387" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="5818fb3d-b1d4-4647-bf18-21a8aff7e044" Version="V2">
+            <WriteLine sap2010:Annotation.AnnotationText="여러줄 출력 시 줄바꿈&#xD;&#xA;`System.Environment.NewLine`&#xD;&#xA;`vbCrLf`&#xD;&#xA;둘 중 한가지 사용" DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,199" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;로그인 되어있음.&quot; + vbCrLf + &quot;로그아웃이 필요함.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </WriteLine>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="484,1412" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OutUiElement="[uiLogout]" ScopeGuid="5818fb3d-b1d4-4647-bf18-21a8aff7e044" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1144" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1169" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Private: Click 'Log Out'" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5818fb3d-b1d4-4647-bf18-21a8aff7e044" Version="V4">
+                    <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="위에서 생성한 UI element 변수(input element)로 활용" ClickType="Single" DelayAfter="5" DisplayName="Private: Click 'Log Out'" sap:VirtualizedContainerService.HintSize="416,215" sap2010:WorkflowViewState.IdRef="NClick_3" InUiElement="[uiLogout]" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5818fb3d-b1d4-4647-bf18-21a8aff7e044" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/home" ContentHash="oZ7cLagxNkaVxbJ5cezAdw" DesignTimeRectangle="2448, 359, 160, 100" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' type='' class='' check:innerText='Log Out' /&gt;" Guid="0875d15d-499e-4e13-9cab-d2cef587a9a3" InformativeScreenshot="2949385f2f42a0b99d0661bdf4eb1221.png" Reference="zqQg-QMm0kO7nRa_3zCrag/iMwaEVysY0-d5wln8r7gbw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -158,6 +171,11 @@
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </uix:NClick>
                     <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="UI Path에 등록된 로그인 정보 가져오기" AssetName="ACME_Login" CacheStrategy="None" DisplayName="Get Credential" FolderPath="power4206@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="416,207" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[sstrPassword]" Username="[strID]">
                       <sap:WorkflowViewStateService.ViewState>
@@ -216,7 +234,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="1. Get Credential 액티비티로 아이디, 비번 가져오기&#xD;&#xA;2. ACME 사이트 접근&#xD;&#xA;3. 로그인되어 있으면 로그아웃&#xD;&#xA;4. 로그아웃 상태면 로그인 진행&#xD;&#xA;3. 아이디와 비번 입력&#xD;&#xA;4. 로그인 버튼 클릭&#xD;&#xA;" DisplayName="자동 로그인 | Sequence" sap:VirtualizedContainerService.HintSize="518,1465" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence sap2010:Annotation.AnnotationText="1. Get Credential 액티비티로 아이디, 비번 가져오기&#xA;2. ACME 사이트 접근&#xA;3. 로그인되어 있으면 로그아웃&#xA;4. 로그아웃 상태면 로그인 진행&#xA;3. 아이디와 비번 입력&#xA;4. 로그인 버튼 클릭&#xA;" DisplayName="자동 로그인 | Sequence" sap:VirtualizedContainerService.HintSize="518,1465" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -230,7 +248,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:GetRobotCredential>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="484,1047" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="1bde4d7d-a3a5-4646-bcc6-ddb7a096d239" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="484,1047" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="1bde4d7d-a3a5-4646-bcc6-ddb7a096d239" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -295,6 +313,11 @@
             </uix:TargetAnchorable.Anchors>
           </uix:TargetAnchorable>
         </uix:NCheckState.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </uix:NCheckState>
     </Sequence>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1158,57" sap2010:WorkflowViewState.IdRef="CommentOut_10">

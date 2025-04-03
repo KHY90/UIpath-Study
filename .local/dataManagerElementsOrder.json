@@ -157,6 +157,17 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/03_DT추출2_네이버코스피.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "FilteredExtractDataTable&Sequence_1",
+        "ExtractDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

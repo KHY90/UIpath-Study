@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tMUpRMgXPkSUTkYgPEIXqA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" DesignTimeRectangle="1132, 1172, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="860edd68-bc59-48d3-a447-e66e0f1e2cfa" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Netscape' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="852, 712, 1676, 72" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='contents' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='contents' tag='H4' type='' class='tit-page' aaname='기록실' check:innerText='기록실' /&gt;" Guid="d7952821-8950-482a-bb16-5e8c5b82b313" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="de094900ed9a2538499856f61b0e8e84.png" xmlns="">0SvCOL_Dp9UWIz2oaSph5GQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

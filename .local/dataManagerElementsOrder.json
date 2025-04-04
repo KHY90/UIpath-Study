@@ -162,8 +162,31 @@
       "Path": "01_이론/03_DT추출2_네이버코스피.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "index&Sequence_1",
         "FilteredExtractDataTable&Sequence_1",
         "ExtractDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/03_DT추출2_네이버코스닥.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "intPrice&Sequence_1",
+        "dtFilterDataTable&Sequence_1",
+        "ExtractDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/03_DT추출3_KBO.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrList&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

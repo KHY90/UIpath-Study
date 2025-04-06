@@ -1,0 +1,14 @@
+﻿{
+  "Name": "타자",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "6tVo397PRUuWidaJIh0Dow",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/6tVo397PRUuWidaJIh0Dow",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/1UB3CTHPcEOGJCuJEBCbDA",
+  "Created": "2025-04-06T13:48:53.2126017Z",
+  "Updated": "2025-04-06T13:48:53.2126017Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

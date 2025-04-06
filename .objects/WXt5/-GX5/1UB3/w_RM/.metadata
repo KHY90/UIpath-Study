@@ -1,0 +1,14 @@
+﻿{
+  "Name": "투수",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "w_RMrjosKEGhXjliWXSE0g",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/w_RMrjosKEGhXjliWXSE0g",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/1UB3CTHPcEOGJCuJEBCbDA",
+  "Created": "2025-04-06T13:49:46.4520979Z",
+  "Updated": "2025-04-06T13:49:46.4520979Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -186,7 +186,11 @@
       "Path": "02_미션/03_DT추출3_KBO.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "arrList&Sequence_1"
+        "dtFilteredCo&Sequence_1",
+        "FilteredDataTable&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "dictUrl&Sequence_1",
+        "arrCategory&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

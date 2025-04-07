@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_03_DT추출3_KBO" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="_03_DT추출3_KBO_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_03_DT추출3_KBO" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="_03_DT추출3_KBO_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -46,6 +46,8 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -108,20 +110,23 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_DT추출3_KBO" sap:VirtualizedContainerService.HintSize="807,4720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_DT추출3_KBO" sap:VirtualizedContainerService.HintSize="834,598.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrCategory" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictUrl" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="FilteredDataTable" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtFilteredCo" />
+      <Variable x:TypeArguments="s:String[]" Name="arrPosition" />
+      <Variable x:TypeArguments="x:String" Name="strSeason" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtFiltered" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DT 추출 시작&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DT 추출 시작&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -129,25 +134,545 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="606,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,292" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,296" sap2010:WorkflowViewState.IdRef="Sequence_52">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute '기록실'" sap:VirtualizedContainerService.HintSize="416,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" Result="[strPosition]" ScopeIdentifier="123828a7-9d2c-4b91-b96d-42cd75e13681" Version="V4">
-            <uix:NGetAttributeGeneric.Target>
-              <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="tMUpRMgXPkSUTkYgPEIXqA" DesignTimeRectangle="1132, 1172, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="860edd68-bc59-48d3-a447-e66e0f1e2cfa" InformativeScreenshot="de094900ed9a2538499856f61b0e8e84.png" Reference="zqQg-QMm0kO7nRa_3zCrag/BopbAZKwsE23FCl3Rfht7w" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Netscape' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                <uix:TargetAnchorable.Anchors>
-                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                    <uix:Target DesignTimeRectangle="852, 712, 1676, 72" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='contents' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='contents' tag='H4' type='' class='tit-page' aaname='기록실' check:innerText='기록실' /&gt;" Guid="d7952821-8950-482a-bb16-5e8c5b82b313" SearchSteps="Selector, FuzzySelector" />
-                  </scg:List>
-                </uix:TargetAnchorable.Anchors>
-              </uix:TargetAnchorable>
-            </uix:NGetAttributeGeneric.Target>
-          </uix:NGetAttributeGeneric>
+          <Sequence sap2010:Annotation.AnnotationText="&lt; KBO 선수 랭킹 &gt;&#xA;1. KBO 사이트(https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx)&#xA;**선수기록**에서 타자, 투수, 수비, 주루별로 각각 “**2024년**” “**KBO 정규시즌**” DT 추출&#xA;- 컬럼명 : 순위, 선수명, 팀명&#xA;&#xA;1. 주의사항&#xA;- 전체 단계를 구체적으로 사전 테스트해보고 설계&#xA;- 여러 페이지가 아닌 한페이지만 추출할 것&#xA;- 필요한 경우 액티비티 유효성 체크" DisplayName="KBO | Sequence" sap:VirtualizedContainerService.HintSize="450,236" sap2010:WorkflowViewState.IdRef="Sequence_55">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="타자, 투수, 수비, 주루" sap:VirtualizedContainerService.HintSize="572,146" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[arrCategory]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"타자", "투수", "수비", "주루"}]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign sap2010:Annotation.AnnotationText="카테고리별 url 딕셔너리로 할당" sap:VirtualizedContainerService.HintSize="572,146" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dictUrl]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New System.Collections.Generic.Dictionary(Of String, String) From { {"타자", "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx"}, {"투수", "https://www.koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx"}, {"수비", "https://www.koreabaseball.com/Record/Player/Defense/Basic.aspx"}, {"주루", "https://www.koreabaseball.com/Record/Player/Runner/Basic.aspx"} }]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="572,3995" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrCategory]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="570,3873" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Dictionary(키(현재카테고리), 벨류(URL))" AttachMode="ByInstance" DisplayName="Chrome 타자  선수 기록  기록실  기록순위  KBO" sap:VirtualizedContainerService.HintSize="536,3643" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V2" WindowResize="Maximize">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="502,3362" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,3300" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[currentText]" sap:VirtualizedContainerService.HintSize="434,2131" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                <Switch.Default>
+                                  <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;현재 : &quot;+ currentText +&quot; 주소 : &quot; + dictUrl(currentText)]">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:LogMessage>
+                                  </Sequence>
+                                </Switch.Default>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence x:Key="타자" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,488" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[currentText + &quot;진입&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '타자'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="45">
+                                        <x:String>1982</x:String>
+                                        <x:String>1983</x:String>
+                                        <x:String>1984</x:String>
+                                        <x:String>1985</x:String>
+                                        <x:String>1986</x:String>
+                                        <x:String>1987</x:String>
+                                        <x:String>1988</x:String>
+                                        <x:String>1989</x:String>
+                                        <x:String>1990</x:String>
+                                        <x:String>1991</x:String>
+                                        <x:String>1992</x:String>
+                                        <x:String>1993</x:String>
+                                        <x:String>1994</x:String>
+                                        <x:String>1995</x:String>
+                                        <x:String>1996</x:String>
+                                        <x:String>1997</x:String>
+                                        <x:String>1998</x:String>
+                                        <x:String>1999</x:String>
+                                        <x:String>2000</x:String>
+                                        <x:String>2001</x:String>
+                                        <x:String>2002</x:String>
+                                        <x:String>2003</x:String>
+                                        <x:String>2004</x:String>
+                                        <x:String>2005</x:String>
+                                        <x:String>2006</x:String>
+                                        <x:String>2007</x:String>
+                                        <x:String>2008</x:String>
+                                        <x:String>2009</x:String>
+                                        <x:String>2010</x:String>
+                                        <x:String>2011</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2020</x:String>
+                                        <x:String>2021</x:String>
+                                        <x:String>2022</x:String>
+                                        <x:String>2023</x:String>
+                                        <x:String>2024</x:String>
+                                        <x:String>2025</x:String>
+                                        <x:String>전체</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="nbTwfIRT1ka2tAfj4kNSDg" DesignTimeRectangle="894, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="f51f5803-8d44-45f6-a24f-e990f2a0f10b" InformativeScreenshot="a685e7c5e6a1a49b76c97cec6e58643d.png" Reference="zqQg-QMm0kO7nRa_3zCrag/6tVo397PRUuWidaJIh0Dow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="858, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' type='' class='' check:innerText='타자' /&gt;" Guid="402e6c1e-3a63-4bb8-a738-5250fa5db57d" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                  <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '타자'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="KBO 정규시즌" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="6">
+                                        <x:String>KBO 정규시즌</x:String>
+                                        <x:String>KBO 시범경기</x:String>
+                                        <x:String>KBO 와일드카드</x:String>
+                                        <x:String>KBO 준플레이오프</x:String>
+                                        <x:String>KBO 플레이오프</x:String>
+                                        <x:String>KBO 한국시리즈</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="T4T-vpp96kGvxHzUoc_nNA" DesignTimeRectangle="1132, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="111d8045-c721-419b-bbd5-432202d27c6d" InformativeScreenshot="ce3695b0b2e472fdddcffa25fcef8fbc.png" Reference="zqQg-QMm0kO7nRa_3zCrag/RnOksYPW00Cet8ZQZXZOgg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="858, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' type='' class='' check:innerText='타자' /&gt;" Guid="f09f6a8a-6a78-4c1d-95ec-c9a616c3cbf6" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                                <Sequence x:Key="투수" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,488" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[currentText + &quot;진입&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NSelectItem DisplayName="Select Item '투수'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="45">
+                                        <x:String>1982</x:String>
+                                        <x:String>1983</x:String>
+                                        <x:String>1984</x:String>
+                                        <x:String>1985</x:String>
+                                        <x:String>1986</x:String>
+                                        <x:String>1987</x:String>
+                                        <x:String>1988</x:String>
+                                        <x:String>1989</x:String>
+                                        <x:String>1990</x:String>
+                                        <x:String>1991</x:String>
+                                        <x:String>1992</x:String>
+                                        <x:String>1993</x:String>
+                                        <x:String>1994</x:String>
+                                        <x:String>1995</x:String>
+                                        <x:String>1996</x:String>
+                                        <x:String>1997</x:String>
+                                        <x:String>1998</x:String>
+                                        <x:String>1999</x:String>
+                                        <x:String>2000</x:String>
+                                        <x:String>2001</x:String>
+                                        <x:String>2002</x:String>
+                                        <x:String>2003</x:String>
+                                        <x:String>2004</x:String>
+                                        <x:String>2005</x:String>
+                                        <x:String>2006</x:String>
+                                        <x:String>2007</x:String>
+                                        <x:String>2008</x:String>
+                                        <x:String>2009</x:String>
+                                        <x:String>2010</x:String>
+                                        <x:String>2011</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2020</x:String>
+                                        <x:String>2021</x:String>
+                                        <x:String>2022</x:String>
+                                        <x:String>2023</x:String>
+                                        <x:String>2024</x:String>
+                                        <x:String>2025</x:String>
+                                        <x:String>전체</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx" ContentHash="gXQdaVEB30qIdULUVLU5BQ" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="87b1b0d9-36f4-43a3-b10c-7f6dd9b86f9a" InformativeScreenshot="694996e130b25d141c53f45a120eb89e.png" Reference="zqQg-QMm0kO7nRa_3zCrag/w_RMrjosKEGhXjliWXSE0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='투수 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="985, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' type='' class='' check:innerText='투수' /&gt;" Guid="dd41ea49-16e2-4060-8a58-1e01f7c454ad" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                  <uix:NSelectItem DisplayName="Select Item '투수'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_12" Item="KBO 정규시즌" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="6">
+                                        <x:String>KBO 정규시즌</x:String>
+                                        <x:String>KBO 시범경기</x:String>
+                                        <x:String>KBO 와일드카드</x:String>
+                                        <x:String>KBO 준플레이오프</x:String>
+                                        <x:String>KBO 플레이오프</x:String>
+                                        <x:String>KBO 한국시리즈</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx" ContentHash="yCIVoFn6BE2PXPOHRleJDQ" DesignTimeRectangle="1132, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="9d84894c-c445-4d9b-84ad-3dbb8efff52d" InformativeScreenshot="f8d23b09d3ece2227226218292f9c301.png" Reference="zqQg-QMm0kO7nRa_3zCrag/Aw9I4L4BiUOOI74CF0cTtA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='투수 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="985, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' type='' class='' check:innerText='투수' /&gt;" Guid="c06a2aba-eadb-4e46-adc6-a724ea352aab" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                                <Sequence x:Key="수비" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[currentText + &quot;진입&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NSelectItem DisplayName="Select Item '수비'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_13" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="25">
+                                        <x:String>2001</x:String>
+                                        <x:String>2002</x:String>
+                                        <x:String>2003</x:String>
+                                        <x:String>2004</x:String>
+                                        <x:String>2005</x:String>
+                                        <x:String>2006</x:String>
+                                        <x:String>2007</x:String>
+                                        <x:String>2008</x:String>
+                                        <x:String>2009</x:String>
+                                        <x:String>2010</x:String>
+                                        <x:String>2011</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2020</x:String>
+                                        <x:String>2021</x:String>
+                                        <x:String>2022</x:String>
+                                        <x:String>2023</x:String>
+                                        <x:String>2024</x:String>
+                                        <x:String>2025</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/Defense/Basic.aspx" ContentHash="hMZqPS2PHkCvUhrclLT7UA" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="ef00b868-0343-434b-8884-7acb0ac6c5a1" InformativeScreenshot="5f60f1a56008ea505ff714b7b28a8a5c.png" Reference="zqQg-QMm0kO7nRa_3zCrag/rsSUwkmyyECMAGoNFj3wjw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='수비 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="1112, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='수비' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='수비' parentid='contents' tag='A' type='' class='' check:innerText='수비' /&gt;" Guid="1afde734-9ebc-40dc-a507-67cd74b4bdf0" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                                <Sequence x:Key="주루" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[currentText + &quot;진입&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <uix:NSelectItem DisplayName="Select Item '주루'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_14" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="25">
+                                        <x:String>2001</x:String>
+                                        <x:String>2002</x:String>
+                                        <x:String>2003</x:String>
+                                        <x:String>2004</x:String>
+                                        <x:String>2005</x:String>
+                                        <x:String>2006</x:String>
+                                        <x:String>2007</x:String>
+                                        <x:String>2008</x:String>
+                                        <x:String>2009</x:String>
+                                        <x:String>2010</x:String>
+                                        <x:String>2011</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2020</x:String>
+                                        <x:String>2021</x:String>
+                                        <x:String>2022</x:String>
+                                        <x:String>2023</x:String>
+                                        <x:String>2024</x:String>
+                                        <x:String>2025</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/Runner/Basic.aspx" ContentHash="Ny3ATSOavUS8MPvUAMpVcA" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="66a61b60-4a2f-44e7-9c2f-71e7cd4d4b23" InformativeScreenshot="fadb174d6f408e19afc3375578a133fb.png" Reference="zqQg-QMm0kO7nRa_3zCrag/TATNgzqn9EOknzLJzaC2CA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='주루 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="1238, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='주루' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='주루' parentid='contents' tag='A' type='' class='' check:innerText='주루' /&gt;" Guid="34e912a0-06af-49ca-8949-4076e63d9af5" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                              </Switch>
+                              <uix:NExtractData sap2010:Annotation.AnnotationText="DT 추출" AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='순위' ReferenceIdx='0' Name='순위'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명' ReferenceIdx='1' Name='선수명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명 Url' ReferenceIdx='2' Name='선수명 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='팀명' ReferenceIdx='3' Name='팀명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AVG' ReferenceIdx='4' Name='AVG' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='G' ReferenceIdx='5' Name='G' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='PA' ReferenceIdx='6' Name='PA' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AB' ReferenceIdx='7' Name='AB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='H' ReferenceIdx='8' Name='H' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2B' ReferenceIdx='9' Name='2B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='3B' ReferenceIdx='10' Name='3B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='HR' ReferenceIdx='11' Name='HR' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='RBI' ReferenceIdx='12' Name='RBI' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SB' ReferenceIdx='13' Name='SB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='CS' ReferenceIdx='14' Name='CS' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='BB' ReferenceIdx='15' Name='BB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='HBP' ReferenceIdx='16' Name='HBP' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SO' ReferenceIdx='17' Name='SO' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='GDP' ReferenceIdx='18' Name='GDP' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='E' ReferenceIdx='19' Name='E' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='순위' attr='fulltext' /&gt;&lt;column name='선수명' attr='fulltext' name2='선수명 Url' attr2='href' /&gt;&lt;column name='팀명' attr='fulltext' /&gt;&lt;column name='AVG' attr='fulltext' /&gt;&lt;column name='G' attr='fulltext' /&gt;&lt;column name='PA' attr='fulltext' /&gt;&lt;column name='AB' attr='fulltext' /&gt;&lt;column name='H' attr='fulltext' /&gt;&lt;column name='2B' attr='fulltext' /&gt;&lt;column name='3B' attr='fulltext' /&gt;&lt;column name='HR' attr='fulltext' /&gt;&lt;column name='RBI' attr='fulltext' /&gt;&lt;column name='SB' attr='fulltext' /&gt;&lt;column name='CS' attr='fulltext' /&gt;&lt;column name='BB' attr='fulltext' /&gt;&lt;column name='HBP' attr='fulltext' /&gt;&lt;column name='SO' attr='fulltext' /&gt;&lt;column name='GDP' attr='fulltext' /&gt;&lt;column name='E' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="434,221" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
+                                <uix:NExtractData.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" DesignTimeRectangle="852, 1268, 1676, 1582" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="fe3c2e29-3505-457d-b35a-c05d38262fac" InformativeScreenshot="6ba732aa437ebd109fef7d3a9dfd2ddc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NExtractData.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NExtractData>
+                              <Assign sap2010:Annotation.AnnotationText="지정하지 않은 컬럼 삭제하기 위해&#xA;ExtractDataTable.DefaultView.ToTable(False, &quot;순위&quot;, &quot;선수명&quot;, &quot;팀명&quot;)&#xA;사용해서 dtFilteredCo라는 DT에 할당" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="sd:DataTable">[dtFilteredCo]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable.DefaultView.ToTable(False, "순위", "선수명", "팀명")]</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                              <If Condition="[currentText = &quot;타자&quot; Or currentText = &quot;투수&quot;]" sap:VirtualizedContainerService.HintSize="434,686" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <Sequence sap2010:Annotation.AnnotationText="- 타자, 투수 : &quot;두산, SSG, 키움&quot; 선수만 남길 것" DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:FilterDataTable DataTable="[dtFilteredCo]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[FilteredDataTable]" SelectColumnsMode="Remove">
+                                      <ui:FilterDataTable.Filters>
+                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["두산"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["키움"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                        </scg:List>
+                                      </ui:FilterDataTable.Filters>
+                                      <ui:FilterDataTable.SelectColumns>
+                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                          <x:Null />
+                                        </scg:List>
+                                      </ui:FilterDataTable.SelectColumns>
+                                    </ui:FilterDataTable>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap2010:Annotation.AnnotationText="- 수비, 주루 : &quot;LG, NC, SSG&quot; 선수만 남길 것" DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:FilterDataTable DataTable="[dtFilteredCo]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[FilteredDataTable]" SelectColumnsMode="Remove">
+                                      <ui:FilterDataTable.Filters>
+                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["LG"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["NC"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                          <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                                            <ui:FilterOperationArgument.Column>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </ui:FilterOperationArgument.Column>
+                                            <ui:FilterOperationArgument.Operand>
+                                              <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
+                                            </ui:FilterOperationArgument.Operand>
+                                          </ui:FilterOperationArgument>
+                                        </scg:List>
+                                      </ui:FilterDataTable.Filters>
+                                      <ui:FilterDataTable.SelectColumns>
+                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                          <x:Null />
+                                        </scg:List>
+                                      </ui:FilterDataTable.SelectColumns>
+                                    </ui:FilterDataTable>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" sap2010:WorkflowViewState.IdRef="TargetApp_4" InformativeScreenshot="9f18d5a5de26739efffe71ea46742520.jpg" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="[dictUrl(currentText)]" Version="V1" />
+                      </uix:NApplicationCard.TargetApp>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NApplicationCard>
+                    <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="최종 필터링 된 DT만 저장" DataTable="[FilteredDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="536,170" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[currentText]" WorkbookPath="Data\Output\KBO.xlsx">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:WriteRange>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
         </Sequence>
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
@@ -157,538 +682,603 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence sap2010:Annotation.AnnotationText="&lt; KBO 선수 랭킹 &gt;&#xA;1. KBO 사이트(https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx)&#xA;**선수기록**에서 타자, 투수, 수비, 주루별로 각각 “**2024년**” “**KBO 정규시즌**” DT 추출&#xA;- 컬럼명 : 순위, 선수명, 팀명&#xA;&#xA;1. 주의사항&#xA;- 전체 단계를 구체적으로 사전 테스트해보고 설계&#xA;- 여러 페이지가 아닌 한페이지만 추출할 것&#xA;- 필요한 경우 액티비티 유효성 체크" DisplayName="KBO | Sequence" sap:VirtualizedContainerService.HintSize="606,4535" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="552,738" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="강사님 버전" DisplayName="For Each 사용 | Sequence" sap:VirtualizedContainerService.HintSize="518,678" sap2010:WorkflowViewState.IdRef="Sequence_38">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[arrPosition]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"타자", "투수", "수비", "주루"}]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 타자  선수 기록  기록실  기록순위  KBO(3)" sap:VirtualizedContainerService.HintSize="484,449" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="416,146" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arrPosition]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:String">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513.5,2690" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="Equals" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Strict Selector aaname에 변수 활용&#xA;currentText변수가 안먹힐 땐&#xA;str** 변수 = currentText 로 새로운 변수에 담아서&#xA;새로운 변수를 사용" ClickType="Single" DisplayName="Click '타자'" sap:VirtualizedContainerService.HintSize="479.5,266" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V4">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/PitcherBasic/Basic1.aspx" DesignTimeRectangle="858, 928, 115, 68" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' parentid='contents' tag='A' /&gt;&quot;, currentText)]" Guid="2d76c2f1-c4ce-4a90-bf17-e40eb1b0e64f" ImageBase64="" InformativeScreenshot="e0fc7594f4af88111143037236bd5913.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='투수 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '선수 기록'" sap:VirtualizedContainerService.HintSize="479.5,190" sap2010:WorkflowViewState.IdRef="NSelectItem_15" Item="2024" ScopeIdentifier="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V4">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="45">
+                                  <x:String>1982</x:String>
+                                  <x:String>1983</x:String>
+                                  <x:String>1984</x:String>
+                                  <x:String>1985</x:String>
+                                  <x:String>1986</x:String>
+                                  <x:String>1987</x:String>
+                                  <x:String>1988</x:String>
+                                  <x:String>1989</x:String>
+                                  <x:String>1990</x:String>
+                                  <x:String>1991</x:String>
+                                  <x:String>1992</x:String>
+                                  <x:String>1993</x:String>
+                                  <x:String>1994</x:String>
+                                  <x:String>1995</x:String>
+                                  <x:String>1996</x:String>
+                                  <x:String>1997</x:String>
+                                  <x:String>1998</x:String>
+                                  <x:String>1999</x:String>
+                                  <x:String>2000</x:String>
+                                  <x:String>2001</x:String>
+                                  <x:String>2002</x:String>
+                                  <x:String>2003</x:String>
+                                  <x:String>2004</x:String>
+                                  <x:String>2005</x:String>
+                                  <x:String>2006</x:String>
+                                  <x:String>2007</x:String>
+                                  <x:String>2008</x:String>
+                                  <x:String>2009</x:String>
+                                  <x:String>2010</x:String>
+                                  <x:String>2011</x:String>
+                                  <x:String>2012</x:String>
+                                  <x:String>2013</x:String>
+                                  <x:String>2014</x:String>
+                                  <x:String>2015</x:String>
+                                  <x:String>2016</x:String>
+                                  <x:String>2017</x:String>
+                                  <x:String>2018</x:String>
+                                  <x:String>2019</x:String>
+                                  <x:String>2020</x:String>
+                                  <x:String>2021</x:String>
+                                  <x:String>2022</x:String>
+                                  <x:String>2023</x:String>
+                                  <x:String>2024</x:String>
+                                  <x:String>2025</x:String>
+                                  <x:String>전체</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" DesignTimeRectangle="894, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="18dc1544-84fc-4b6a-8468-c7bcea2d5b64" InformativeScreenshot="5c8fa08ea9a93a7b5259b1431ee45a46.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="852, 770, 419, 88" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' type='' class='' check:innerText='선수 기록' /&gt;" Guid="981f2041-f376-4144-a158-d72fe52adf85" SearchSteps="Selector, FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DelayAfter="1" DelayBefore="1" DisplayName="Get Attribute '선수 기록'" sap:VirtualizedContainerService.HintSize="479.5,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[strSeason]" ScopeIdentifier="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V4">
+                              <uix:NGetAttributeGeneric.Target>
+                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx" ContentHash="1kWzVnpQdEG6Q5MExuOI3g" DesignTimeRectangle="1132, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="f5286933-79e3-4063-b858-9cb16184d07b" InformativeScreenshot="f948a78984827c7f2b2a7880bd3fcf87.png" Reference="zqQg-QMm0kO7nRa_3zCrag/WUOwZaIiaEi83czrSEWHIA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="852, 770, 419, 88" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' type='' class='' check:innerText='선수 기록' /&gt;" Guid="76595df9-2cc0-4ca3-a83d-5a2addfd562f" SearchSteps="Selector, FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetAttributeGeneric.Target>
+                            </uix:NGetAttributeGeneric>
+                            <If Condition="[strSeason.Contains(&quot;정규시즌&quot;)]" sap:VirtualizedContainerService.HintSize="479.5,470" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,241" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '기록실'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_17" Item="KBO 정규시즌" ScopeIdentifier="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="6">
+                                        <x:String>KBO 정규시즌</x:String>
+                                        <x:String>KBO 시범경기</x:String>
+                                        <x:String>KBO 와일드카드</x:String>
+                                        <x:String>KBO 준플레이오프</x:String>
+                                        <x:String>KBO 플레이오프</x:String>
+                                        <x:String>KBO 한국시리즈</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx" ContentHash="yqSsILKoY0Sl0SBhqujZZQ" DesignTimeRectangle="1132, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="4655a622-a57c-4a24-b78e-7373c6e95a9f" InformativeScreenshot="c0861072265942052c8997bd44d963da.png" Reference="zqQg-QMm0kO7nRa_3zCrag/FPddyniRZ0Gxz9GpWO9teA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="852, 608, 1676, 72" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='contents' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='contents' tag='H4' type='' class='tit-page' aaname='기록실' check:innerText='기록실' /&gt;" Guid="1032e1ba-85ad-4ceb-aa47-470139d86b58" SearchSteps="Selector, FuzzySelector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='순위' ReferenceIdx='0' Name='순위'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명' ReferenceIdx='1' Name='선수명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명 Url' ReferenceIdx='2' Name='선수명 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='팀명' ReferenceIdx='3' Name='팀명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AVG' ReferenceIdx='4' Name='AVG' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='G' ReferenceIdx='5' Name='G' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='PA' ReferenceIdx='6' Name='PA' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AB' ReferenceIdx='7' Name='AB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='R' ReferenceIdx='8' Name='R' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='H' ReferenceIdx='9' Name='H' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2B' ReferenceIdx='10' Name='2B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='3B' ReferenceIdx='11' Name='3B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='HR' ReferenceIdx='12' Name='HR' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='TB' ReferenceIdx='13' Name='TB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='RBI' ReferenceIdx='14' Name='RBI' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SAC' ReferenceIdx='15' Name='SAC' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SF' ReferenceIdx='16' Name='SF' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='순위' attr='fulltext' /&gt;&lt;column name='선수명' attr='fulltext' name2='선수명 Url' attr2='href' /&gt;&lt;column name='팀명' attr='fulltext' /&gt;&lt;column name='AVG' attr='fulltext' /&gt;&lt;column name='G' attr='fulltext' /&gt;&lt;column name='PA' attr='fulltext' /&gt;&lt;column name='AB' attr='fulltext' /&gt;&lt;column name='R' attr='fulltext' /&gt;&lt;column name='H' attr='fulltext' /&gt;&lt;column name='2B' attr='fulltext' /&gt;&lt;column name='3B' attr='fulltext' /&gt;&lt;column name='HR' attr='fulltext' /&gt;&lt;column name='TB' attr='fulltext' /&gt;&lt;column name='RBI' attr='fulltext' /&gt;&lt;column name='SAC' attr='fulltext' /&gt;&lt;column name='SF' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="479.5,190" sap2010:WorkflowViewState.IdRef="NExtractData_4" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="be7464f2-6352-4bea-ad1f-3a825958e978" Version="V4">
+                              <uix:NExtractData.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx" DesignTimeRectangle="852, 1317, 1676, 1582" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="3e46cfbb-ba95-4d7a-a34c-e2bc2af79c32" InformativeScreenshot="1f91bd1aec1f7b16765029babbfed659.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              </uix:NExtractData.Target>
+                            </uix:NExtractData>
+                            <Assign sap:VirtualizedContainerService.HintSize="479.5,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="sd:DataTable">[dtFiltered]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable.Clone]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:IfElseIfV2 Condition="[currentText.Equals(&quot;타자&quot;) OrElse currentText.Equals(&quot;투수&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="479.5,808" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                              <ui:IfElseIfV2.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </ui:IfElseIfV2.Else>
+                              <ui:IfElseIfV2.ElseIfs>
+                                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[currentText.Equals(&quot;수비&quot;) Or currentText.Equals(&quot;주루&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+                                    <ui:IfElseIfBlock.Then>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dtFiltered]" SelectColumnsMode="Keep">
+                                          <ui:FilterDataTable.Filters>
+                                            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                              <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                                <ui:FilterOperationArgument.Operand>
+                                                  <InArgument x:TypeArguments="x:String">["LG"]</InArgument>
+                                                </ui:FilterOperationArgument.Operand>
+                                              </ui:FilterOperationArgument>
+                                              <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                                <ui:FilterOperationArgument.Operand>
+                                                  <InArgument x:TypeArguments="x:String">["NC"]</InArgument>
+                                                </ui:FilterOperationArgument.Operand>
+                                              </ui:FilterOperationArgument>
+                                              <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                                <ui:FilterOperationArgument.Operand>
+                                                  <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
+                                                </ui:FilterOperationArgument.Operand>
+                                              </ui:FilterOperationArgument>
+                                            </scg:List>
+                                          </ui:FilterDataTable.Filters>
+                                          <ui:FilterDataTable.SelectColumns>
+                                            <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                              <InArgument x:TypeArguments="x:String">["순위"]</InArgument>
+                                              <InArgument x:TypeArguments="x:String">["선수명"]</InArgument>
+                                              <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                            </scg:List>
+                                          </ui:FilterDataTable.SelectColumns>
+                                        </ui:FilterDataTable>
+                                      </Sequence>
+                                    </ui:IfElseIfBlock.Then>
+                                  </ui:IfElseIfBlock>
+                                </sc:BindingList>
+                              </ui:IfElseIfV2.ElseIfs>
+                              <ui:IfElseIfV2.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dtFiltered]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["두산"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                        <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["키움"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                        <InArgument x:TypeArguments="x:String">["순위"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["선수명"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                </Sequence>
+                              </ui:IfElseIfV2.Then>
+                            </ui:IfElseIfV2>
+                            <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtFiltered]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="479.5,148" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[currentText]" WorkbookPath="Data\Output\KBO3.xlsx" />
+                            <ui:MultipleAssign sap2010:Annotation.AnnotationText="재사용 변수 초기화" DisplayName="재사용 변수 초기화 | Multiple Assign" sap:VirtualizedContainerService.HintSize="479.5,202" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[strSeason]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="sd:DataTable">[dtFiltered]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:MultipleAssign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                    </ui:ForEach>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="RFD9BAD1PEiZRN2_i7h7AQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" InformativeScreenshot="9f18d5a5de26739efffe71ea46742520.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/23WARL-XOk6yqkax76E-JQ" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" Version="V1" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="타자, 투수, 수비, 주루" sap:VirtualizedContainerService.HintSize="572,146" sap2010:WorkflowViewState.IdRef="Assign_3">
-        <Assign.To>
-          <OutArgument x:TypeArguments="s:String[]">[arrCategory]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="s:String[]">[{"타자", "투수", "수비", "주루"}]</InArgument>
-        </Assign.Value>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </Assign>
-      <Assign sap2010:Annotation.AnnotationText="카테고리별 url 딕셔너리로 할당" sap:VirtualizedContainerService.HintSize="572,146" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dictUrl]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New System.Collections.Generic.Dictionary(Of String, String) From { {"타자", "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx"}, {"투수", "https://www.koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx"}, {"수비", "https://www.koreabaseball.com/Record/Player/Defense/Basic.aspx"}, {"주루", "https://www.koreabaseball.com/Record/Player/Runner/Basic.aspx"} }]</InArgument>
-        </Assign.Value>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="572,3995" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrCategory]">
-        <ui:ForEach.Body>
-          <ActivityAction x:TypeArguments="x:String">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="570,3873" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="Sequence_58">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="강사님 버전2" DisplayName="URL 직접 접근 방식 사용 | Sequence" sap:VirtualizedContainerService.HintSize="450,79" sap2010:WorkflowViewState.IdRef="Sequence_51">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strPositions" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="URL 직접 접근 방식 | Sequence" sap:VirtualizedContainerService.HintSize="554,1210" sap2010:WorkflowViewState.IdRef="Sequence_54">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="s:String[]" Name="arrUrl" />
+                <Variable x:TypeArguments="x:Int32" Name="intIndex" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard sap2010:Annotation.AnnotationText="Dictionary(키(현재카테고리), 벨류(URL))" AttachMode="ByInstance" DisplayName="Chrome 타자  선수 기록  기록실  기록순위  KBO" sap:VirtualizedContainerService.HintSize="536,3643" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V2" WindowResize="Maximize">
-                <uix:NApplicationCard.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
+              <Assign sap:VirtualizedContainerService.HintSize="520,115" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrPosition]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[{"타자", "투수", "수비", "주루"}]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="URL | Assign" sap:VirtualizedContainerService.HintSize="520,115" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrUrl]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[{"HitterBasic/BasicOld.aspx", "PitcherBasic/BasicOld.aspx", "Defense/Basic.aspx" ,"Runner/Basic.aspx"}]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[intIndex]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="520,897" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[arrUrl]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="502,3362" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,775" sap2010:WorkflowViewState.IdRef="Sequence_53">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,3300" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <Assign sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strPositions]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[arrPosition(intIndex)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;현재 페이지 : &quot; + strPositions]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[currentText]" sap:VirtualizedContainerService.HintSize="434,2131" sap2010:WorkflowViewState.IdRef="Switch`1_4">
-                          <Switch.Default>
-                            <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                      </WriteLine>
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 타자  선수 기록  기록실  기록순위  KBO(3)" sap:VirtualizedContainerService.HintSize="484,543" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="44f57acd-f5fa-4888-9537-5c39e2044cd6" Version="V2" WindowResize="Maximize">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_56">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;현재 : &quot;+ currentText]">
+                              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[intIndex.ToString.Trim+&quot;번째 : &quot;+strPositions]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
+                              </WriteLine>
+                              <uix:NSelectItem DisplayName="Select Item '선수 기록'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NSelectItem_18" Item="2024" ScopeIdentifier="44f57acd-f5fa-4888-9537-5c39e2044cd6" Version="V4">
+                                <uix:NSelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="45">
+                                    <x:String>1982</x:String>
+                                    <x:String>1983</x:String>
+                                    <x:String>1984</x:String>
+                                    <x:String>1985</x:String>
+                                    <x:String>1986</x:String>
+                                    <x:String>1987</x:String>
+                                    <x:String>1988</x:String>
+                                    <x:String>1989</x:String>
+                                    <x:String>1990</x:String>
+                                    <x:String>1991</x:String>
+                                    <x:String>1992</x:String>
+                                    <x:String>1993</x:String>
+                                    <x:String>1994</x:String>
+                                    <x:String>1995</x:String>
+                                    <x:String>1996</x:String>
+                                    <x:String>1997</x:String>
+                                    <x:String>1998</x:String>
+                                    <x:String>1999</x:String>
+                                    <x:String>2000</x:String>
+                                    <x:String>2001</x:String>
+                                    <x:String>2002</x:String>
+                                    <x:String>2003</x:String>
+                                    <x:String>2004</x:String>
+                                    <x:String>2005</x:String>
+                                    <x:String>2006</x:String>
+                                    <x:String>2007</x:String>
+                                    <x:String>2008</x:String>
+                                    <x:String>2009</x:String>
+                                    <x:String>2010</x:String>
+                                    <x:String>2011</x:String>
+                                    <x:String>2012</x:String>
+                                    <x:String>2013</x:String>
+                                    <x:String>2014</x:String>
+                                    <x:String>2015</x:String>
+                                    <x:String>2016</x:String>
+                                    <x:String>2017</x:String>
+                                    <x:String>2018</x:String>
+                                    <x:String>2019</x:String>
+                                    <x:String>2020</x:String>
+                                    <x:String>2021</x:String>
+                                    <x:String>2022</x:String>
+                                    <x:String>2023</x:String>
+                                    <x:String>2024</x:String>
+                                    <x:String>2025</x:String>
+                                    <x:String>전체</x:String>
+                                  </scg:List>
+                                </uix:NSelectItem.Items>
+                                <uix:NSelectItem.Target>
+                                  <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="ARYHgz8oHku6cGAbBX7g5g" DesignTimeRectangle="894, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="fa4bb2e5-3636-4605-a84e-96588056f73d" InformativeScreenshot="017cc1acc0ed0b1009bbbb1ef1a67e5b.png" Reference="zqQg-QMm0kO7nRa_3zCrag/gKR4TBaaUkCd6O0vnWXsfw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target DesignTimeRectangle="852, 770, 419, 88" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='선수 기록' parentid='contents' tag='A' type='' class='' check:innerText='선수 기록' /&gt;" Guid="92b0a6f4-2b14-42d3-bf41-210e2e38f9fc" SearchSteps="Selector, FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NSelectItem.Target>
+                              </uix:NSelectItem>
                             </Sequence>
-                          </Switch.Default>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Sequence x:Key="타자" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,488" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[currentText + &quot;진입&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '타자'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="45">
-                                  <x:String>1982</x:String>
-                                  <x:String>1983</x:String>
-                                  <x:String>1984</x:String>
-                                  <x:String>1985</x:String>
-                                  <x:String>1986</x:String>
-                                  <x:String>1987</x:String>
-                                  <x:String>1988</x:String>
-                                  <x:String>1989</x:String>
-                                  <x:String>1990</x:String>
-                                  <x:String>1991</x:String>
-                                  <x:String>1992</x:String>
-                                  <x:String>1993</x:String>
-                                  <x:String>1994</x:String>
-                                  <x:String>1995</x:String>
-                                  <x:String>1996</x:String>
-                                  <x:String>1997</x:String>
-                                  <x:String>1998</x:String>
-                                  <x:String>1999</x:String>
-                                  <x:String>2000</x:String>
-                                  <x:String>2001</x:String>
-                                  <x:String>2002</x:String>
-                                  <x:String>2003</x:String>
-                                  <x:String>2004</x:String>
-                                  <x:String>2005</x:String>
-                                  <x:String>2006</x:String>
-                                  <x:String>2007</x:String>
-                                  <x:String>2008</x:String>
-                                  <x:String>2009</x:String>
-                                  <x:String>2010</x:String>
-                                  <x:String>2011</x:String>
-                                  <x:String>2012</x:String>
-                                  <x:String>2013</x:String>
-                                  <x:String>2014</x:String>
-                                  <x:String>2015</x:String>
-                                  <x:String>2016</x:String>
-                                  <x:String>2017</x:String>
-                                  <x:String>2018</x:String>
-                                  <x:String>2019</x:String>
-                                  <x:String>2020</x:String>
-                                  <x:String>2021</x:String>
-                                  <x:String>2022</x:String>
-                                  <x:String>2023</x:String>
-                                  <x:String>2024</x:String>
-                                  <x:String>2025</x:String>
-                                  <x:String>전체</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="nbTwfIRT1ka2tAfj4kNSDg" DesignTimeRectangle="894, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="f51f5803-8d44-45f6-a24f-e990f2a0f10b" InformativeScreenshot="a685e7c5e6a1a49b76c97cec6e58643d.png" Reference="zqQg-QMm0kO7nRa_3zCrag/6tVo397PRUuWidaJIh0Dow" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="858, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' type='' class='' check:innerText='타자' /&gt;" Guid="402e6c1e-3a63-4bb8-a738-5250fa5db57d" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                            <uix:NSelectItem DelayAfter="1" DelayBefore="1" DisplayName="Select Item '타자'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="KBO 정규시즌" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="6">
-                                  <x:String>KBO 정규시즌</x:String>
-                                  <x:String>KBO 시범경기</x:String>
-                                  <x:String>KBO 와일드카드</x:String>
-                                  <x:String>KBO 준플레이오프</x:String>
-                                  <x:String>KBO 플레이오프</x:String>
-                                  <x:String>KBO 한국시리즈</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="T4T-vpp96kGvxHzUoc_nNA" DesignTimeRectangle="1132, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="111d8045-c721-419b-bbd5-432202d27c6d" InformativeScreenshot="ce3695b0b2e472fdddcffa25fcef8fbc.png" Reference="zqQg-QMm0kO7nRa_3zCrag/RnOksYPW00Cet8ZQZXZOgg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="858, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='타자' parentid='contents' tag='A' type='' class='' check:innerText='타자' /&gt;" Guid="f09f6a8a-6a78-4c1d-95ec-c9a616c3cbf6" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                          </Sequence>
-                          <Sequence x:Key="투수" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,488" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[currentText + &quot;진입&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <uix:NSelectItem DisplayName="Select Item '투수'" sap:VirtualizedContainerService.HintSize="382,190" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="45">
-                                  <x:String>1982</x:String>
-                                  <x:String>1983</x:String>
-                                  <x:String>1984</x:String>
-                                  <x:String>1985</x:String>
-                                  <x:String>1986</x:String>
-                                  <x:String>1987</x:String>
-                                  <x:String>1988</x:String>
-                                  <x:String>1989</x:String>
-                                  <x:String>1990</x:String>
-                                  <x:String>1991</x:String>
-                                  <x:String>1992</x:String>
-                                  <x:String>1993</x:String>
-                                  <x:String>1994</x:String>
-                                  <x:String>1995</x:String>
-                                  <x:String>1996</x:String>
-                                  <x:String>1997</x:String>
-                                  <x:String>1998</x:String>
-                                  <x:String>1999</x:String>
-                                  <x:String>2000</x:String>
-                                  <x:String>2001</x:String>
-                                  <x:String>2002</x:String>
-                                  <x:String>2003</x:String>
-                                  <x:String>2004</x:String>
-                                  <x:String>2005</x:String>
-                                  <x:String>2006</x:String>
-                                  <x:String>2007</x:String>
-                                  <x:String>2008</x:String>
-                                  <x:String>2009</x:String>
-                                  <x:String>2010</x:String>
-                                  <x:String>2011</x:String>
-                                  <x:String>2012</x:String>
-                                  <x:String>2013</x:String>
-                                  <x:String>2014</x:String>
-                                  <x:String>2015</x:String>
-                                  <x:String>2016</x:String>
-                                  <x:String>2017</x:String>
-                                  <x:String>2018</x:String>
-                                  <x:String>2019</x:String>
-                                  <x:String>2020</x:String>
-                                  <x:String>2021</x:String>
-                                  <x:String>2022</x:String>
-                                  <x:String>2023</x:String>
-                                  <x:String>2024</x:String>
-                                  <x:String>2025</x:String>
-                                  <x:String>전체</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx" ContentHash="gXQdaVEB30qIdULUVLU5BQ" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="87b1b0d9-36f4-43a3-b10c-7f6dd9b86f9a" InformativeScreenshot="694996e130b25d141c53f45a120eb89e.png" Reference="zqQg-QMm0kO7nRa_3zCrag/w_RMrjosKEGhXjliWXSE0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='투수 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="985, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' type='' class='' check:innerText='투수' /&gt;" Guid="dd41ea49-16e2-4060-8a58-1e01f7c454ad" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                            <uix:NSelectItem DisplayName="Select Item '투수'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_12" Item="KBO 정규시즌" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="6">
-                                  <x:String>KBO 정규시즌</x:String>
-                                  <x:String>KBO 시범경기</x:String>
-                                  <x:String>KBO 와일드카드</x:String>
-                                  <x:String>KBO 준플레이오프</x:String>
-                                  <x:String>KBO 플레이오프</x:String>
-                                  <x:String>KBO 한국시리즈</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/PitcherBasic/BasicOld.aspx" ContentHash="yCIVoFn6BE2PXPOHRleJDQ" DesignTimeRectangle="1132, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="9d84894c-c445-4d9b-84ad-3dbb8efff52d" InformativeScreenshot="f8d23b09d3ece2227226218292f9c301.png" Reference="zqQg-QMm0kO7nRa_3zCrag/Aw9I4L4BiUOOI74CF0cTtA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='투수 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="985, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='투수' parentid='contents' tag='A' type='' class='' check:innerText='투수' /&gt;" Guid="c06a2aba-eadb-4e46-adc6-a724ea352aab" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                          </Sequence>
-                          <Sequence x:Key="수비" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[currentText + &quot;진입&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <uix:NSelectItem DisplayName="Select Item '수비'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_13" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="25">
-                                  <x:String>2001</x:String>
-                                  <x:String>2002</x:String>
-                                  <x:String>2003</x:String>
-                                  <x:String>2004</x:String>
-                                  <x:String>2005</x:String>
-                                  <x:String>2006</x:String>
-                                  <x:String>2007</x:String>
-                                  <x:String>2008</x:String>
-                                  <x:String>2009</x:String>
-                                  <x:String>2010</x:String>
-                                  <x:String>2011</x:String>
-                                  <x:String>2012</x:String>
-                                  <x:String>2013</x:String>
-                                  <x:String>2014</x:String>
-                                  <x:String>2015</x:String>
-                                  <x:String>2016</x:String>
-                                  <x:String>2017</x:String>
-                                  <x:String>2018</x:String>
-                                  <x:String>2019</x:String>
-                                  <x:String>2020</x:String>
-                                  <x:String>2021</x:String>
-                                  <x:String>2022</x:String>
-                                  <x:String>2023</x:String>
-                                  <x:String>2024</x:String>
-                                  <x:String>2025</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/Defense/Basic.aspx" ContentHash="hMZqPS2PHkCvUhrclLT7UA" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="ef00b868-0343-434b-8884-7acb0ac6c5a1" InformativeScreenshot="5f60f1a56008ea505ff714b7b28a8a5c.png" Reference="zqQg-QMm0kO7nRa_3zCrag/rsSUwkmyyECMAGoNFj3wjw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='수비 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="1112, 928, 116, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='수비' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='수비' parentid='contents' tag='A' type='' class='' check:innerText='수비' /&gt;" Guid="1afde734-9ebc-40dc-a507-67cd74b4bdf0" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                          </Sequence>
-                          <Sequence x:Key="주루" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[currentText + &quot;진입&quot;]">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
-                            <uix:NSelectItem DisplayName="Select Item '주루'" sap:VirtualizedContainerService.HintSize="382,181" sap2010:WorkflowViewState.IdRef="NSelectItem_14" Item="2024" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                              <uix:NSelectItem.Items>
-                                <scg:List x:TypeArguments="x:String" Capacity="25">
-                                  <x:String>2001</x:String>
-                                  <x:String>2002</x:String>
-                                  <x:String>2003</x:String>
-                                  <x:String>2004</x:String>
-                                  <x:String>2005</x:String>
-                                  <x:String>2006</x:String>
-                                  <x:String>2007</x:String>
-                                  <x:String>2008</x:String>
-                                  <x:String>2009</x:String>
-                                  <x:String>2010</x:String>
-                                  <x:String>2011</x:String>
-                                  <x:String>2012</x:String>
-                                  <x:String>2013</x:String>
-                                  <x:String>2014</x:String>
-                                  <x:String>2015</x:String>
-                                  <x:String>2016</x:String>
-                                  <x:String>2017</x:String>
-                                  <x:String>2018</x:String>
-                                  <x:String>2019</x:String>
-                                  <x:String>2020</x:String>
-                                  <x:String>2021</x:String>
-                                  <x:String>2022</x:String>
-                                  <x:String>2023</x:String>
-                                  <x:String>2024</x:String>
-                                  <x:String>2025</x:String>
-                                </scg:List>
-                              </uix:NSelectItem.Items>
-                              <uix:NSelectItem.Target>
-                                <uix:TargetAnchorable BrowserURL="koreabaseball.com/Record/Player/Runner/Basic.aspx" ContentHash="Ny3ATSOavUS8MPvUAMpVcA" DesignTimeRectangle="894, 1048, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeason_ddlSeason' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="66a61b60-4a2f-44e7-9c2f-71e7cd4d4b23" InformativeScreenshot="fadb174d6f408e19afc3375578a133fb.png" Reference="zqQg-QMm0kO7nRa_3zCrag/TATNgzqn9EOknzLJzaC2CA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='주루 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="1238, 928, 117, 68" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='주루' parentid='contents' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='주루' parentid='contents' tag='A' type='' class='' check:innerText='주루' /&gt;" Guid="34e912a0-06af-49ca-8949-4076e63d9af5" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
-                              </uix:NSelectItem.Target>
-                            </uix:NSelectItem>
-                          </Sequence>
-                        </Switch>
-                        <uix:NExtractData sap2010:Annotation.AnnotationText="DT 추출" AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='순위' ReferenceIdx='0' Name='순위'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명' ReferenceIdx='1' Name='선수명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='선수명 Url' ReferenceIdx='2' Name='선수명 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='팀명' ReferenceIdx='3' Name='팀명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AVG' ReferenceIdx='4' Name='AVG' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='G' ReferenceIdx='5' Name='G' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='PA' ReferenceIdx='6' Name='PA' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AB' ReferenceIdx='7' Name='AB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='H' ReferenceIdx='8' Name='H' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2B' ReferenceIdx='9' Name='2B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='3B' ReferenceIdx='10' Name='3B' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='HR' ReferenceIdx='11' Name='HR' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='RBI' ReferenceIdx='12' Name='RBI' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SB' ReferenceIdx='13' Name='SB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='CS' ReferenceIdx='14' Name='CS' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='BB' ReferenceIdx='15' Name='BB' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='HBP' ReferenceIdx='16' Name='HBP' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='SO' ReferenceIdx='17' Name='SO' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='GDP' ReferenceIdx='18' Name='GDP' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='E' ReferenceIdx='19' Name='E' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='순위' attr='fulltext' /&gt;&lt;column name='선수명' attr='fulltext' name2='선수명 Url' attr2='href' /&gt;&lt;column name='팀명' attr='fulltext' /&gt;&lt;column name='AVG' attr='fulltext' /&gt;&lt;column name='G' attr='fulltext' /&gt;&lt;column name='PA' attr='fulltext' /&gt;&lt;column name='AB' attr='fulltext' /&gt;&lt;column name='H' attr='fulltext' /&gt;&lt;column name='2B' attr='fulltext' /&gt;&lt;column name='3B' attr='fulltext' /&gt;&lt;column name='HR' attr='fulltext' /&gt;&lt;column name='RBI' attr='fulltext' /&gt;&lt;column name='SB' attr='fulltext' /&gt;&lt;column name='CS' attr='fulltext' /&gt;&lt;column name='BB' attr='fulltext' /&gt;&lt;column name='HBP' attr='fulltext' /&gt;&lt;column name='SO' attr='fulltext' /&gt;&lt;column name='GDP' attr='fulltext' /&gt;&lt;column name='E' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="434,221" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="0487c8ae-26da-4bca-981b-d7b9e854f001" Version="V4">
-                          <uix:NExtractData.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" DesignTimeRectangle="852, 1268, 1676, 1582" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="fe3c2e29-3505-457d-b35a-c05d38262fac" InformativeScreenshot="6ba732aa437ebd109fef7d3a9dfd2ddc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                          </uix:NExtractData.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NExtractData>
-                        <Assign sap2010:Annotation.AnnotationText="지정하지 않은 컬럼 삭제하기 위해&#xD;&#xA;ExtractDataTable.DefaultView.ToTable(False, &quot;순위&quot;, &quot;선수명&quot;, &quot;팀명&quot;)&#xD;&#xA;사용해서 dtFilteredCo라는 DT에 할당" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="sd:DataTable">[dtFilteredCo]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable.DefaultView.ToTable(False, "순위", "선수명", "팀명")]</InArgument>
-                          </Assign.Value>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                        <If Condition="[currentText = &quot;타자&quot; Or currentText = &quot;투수&quot;]" sap:VirtualizedContainerService.HintSize="434,686" sap2010:WorkflowViewState.IdRef="If_2">
-                          <If.Then>
-                            <Sequence sap2010:Annotation.AnnotationText="- 타자, 투수 : &quot;두산, SSG, 키움&quot; 선수만 남길 것" DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:FilterDataTable DataTable="[dtFilteredCo]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[FilteredDataTable]" SelectColumnsMode="Remove">
-                                <ui:FilterDataTable.Filters>
-                                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["두산"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                    <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                    <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["키움"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                  </scg:List>
-                                </ui:FilterDataTable.Filters>
-                                <ui:FilterDataTable.SelectColumns>
-                                  <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                    <x:Null />
-                                  </scg:List>
-                                </ui:FilterDataTable.SelectColumns>
-                              </ui:FilterDataTable>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence sap2010:Annotation.AnnotationText="- 수비, 주루 : &quot;LG, NC, SSG&quot; 선수만 남길 것" DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:FilterDataTable DataTable="[dtFilteredCo]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="382,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[FilteredDataTable]" SelectColumnsMode="Remove">
-                                <ui:FilterDataTable.Filters>
-                                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["LG"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                    <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["NC"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                    <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                                      <ui:FilterOperationArgument.Column>
-                                        <InArgument x:TypeArguments="x:String">["팀명"]</InArgument>
-                                      </ui:FilterOperationArgument.Column>
-                                      <ui:FilterOperationArgument.Operand>
-                                        <InArgument x:TypeArguments="x:String">["SSG"]</InArgument>
-                                      </ui:FilterOperationArgument.Operand>
-                                    </ui:FilterOperationArgument>
-                                  </scg:List>
-                                </ui:FilterDataTable.Filters>
-                                <ui:FilterDataTable.SelectColumns>
-                                  <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                    <x:Null />
-                                  </scg:List>
-                                </ui:FilterDataTable.SelectColumns>
-                              </ui:FilterDataTable>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                      </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="6oUY_TwBFkeuXoBUzhyNNA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" InformativeScreenshot="9f18d5a5de26739efffe71ea46742520.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/coz6tiSI8UW3o9kpes5hLA" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="[&quot;https://www.koreabaseball.com/Record/Player/&quot; + currentText]" Version="V1" />
+                        </uix:NApplicationCard.TargetApp>
+                      </uix:NApplicationCard>
                     </Sequence>
                   </ActivityAction>
-                </uix:NApplicationCard.Body>
-                <uix:NApplicationCard.TargetApp>
-                  <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" sap2010:WorkflowViewState.IdRef="TargetApp_4" InformativeScreenshot="9f18d5a5de26739efffe71ea46742520.jpg" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="[dictUrl(currentText)]" Version="V1" />
-                </uix:NApplicationCard.TargetApp>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </uix:NApplicationCard>
-              <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="최종 필터링 된 DT만 저장" DataTable="[FilteredDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="536,170" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[currentText]" WorkbookPath="Data\Output\KBO.xlsx">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:WriteRange>
+                </ui:ForEach.Body>
+              </ui:ForEach>
             </Sequence>
-          </ActivityAction>
-        </ui:ForEach.Body>
-      </ui:ForEach>
-    </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,48" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;KBO 종료&quot;]">
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="650,964" sap2010:WorkflowViewState.IdRef="Sequence_65">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="For Each UI Element | Sequence" sap:VirtualizedContainerService.HintSize="616,904" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 타자  선수 기록  기록실  기록순위  KBO(3)" sap:VirtualizedContainerService.HintSize="582,821" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="4b7f7691-bc39-4962-b231-d9e22b20cfab" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,580" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NForEachUiElement DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="514,518" sap2010:WorkflowViewState.IdRef="NForEachUiElement_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4b7f7691-bc39-4962-b231-d9e22b20cfab" Version="V4">
+                      <uix:NForEachUiElement.Body>
+                        <ActivityAction x:TypeArguments="x:Int32">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="NClick_4" InUiElement="[CurrentElement]" KeyModifiers="None" MouseButton="Left" Version="V4" />
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NForEachUiElement.Body>
+                      <uix:NForEachUiElement.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" ContentHash="ipWZicj58km5j-IXQK29xg" DesignTimeRectangle="852, 928, 1676, 72" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='tab-depth2' parentid='contents' tag='DIV' /&gt;" Guid="5e307b64-1e85-40aa-9f97-752510c32539" InformativeScreenshot="e8b25976892bdf82ab5fa42aae003636.png" Reference="zqQg-QMm0kO7nRa_3zCrag/cHshv4IirkSuBo_oPeT4jw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                      </uix:NForEachUiElement.Target>
+                      <uix:NForEachUiElement.Variables>
+                        <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                        <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+                      </uix:NForEachUiElement.Variables>
+                      <uix:NForEachUiElement.VariablesMetadata>
+                        <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                          <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                          <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                        </scg:List>
+                      </uix:NForEachUiElement.VariablesMetadata>
+                    </uix:NForEachUiElement>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="RFD9BAD1PEiZRN2_i7h7AQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" InformativeScreenshot="9f18d5a5de26739efffe71ea46742520.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/23WARL-XOk6yqkax76E-JQ" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" Version="V1" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;KBO 종료&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

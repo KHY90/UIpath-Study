@@ -1,0 +1,14 @@
+﻿{
+  "Name": "타자",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "MnMJ4M_1QUGD3P8hZm8ebg",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/MnMJ4M_1QUGD3P8hZm8ebg",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/23WARL-XOk6yqkax76E-JQ",
+  "Created": "2025-04-07T01:08:01.4608875Z",
+  "Updated": "2025-04-07T01:08:01.4608875Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

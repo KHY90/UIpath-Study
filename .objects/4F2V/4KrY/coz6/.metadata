@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome 타자  선수 기록  기록실  기록순위  KBO(3)",
+  "Type": "Screen",
+  "Id": "coz6tiSI8UW3o9kpes5hLA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/coz6tiSI8UW3o9kpes5hLA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/4KrYtFM3CEWXQNbzKVJsUQ",
+  "Created": "2025-04-07T03:19:07.5450731Z",
+  "Updated": "2025-04-07T03:19:07.5450731Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -186,11 +186,44 @@
       "Path": "02_미션/03_DT추출3_KBO.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dtFilteredCo&Sequence_1",
-        "FilteredDataTable&Sequence_1",
-        "ExtractDataTable&Sequence_1",
+        "arrCategory&Sequence_1",
         "dictUrl&Sequence_1",
-        "arrCategory&Sequence_1"
+        "ExtractDataTable&Sequence_1",
+        "FilteredDataTable&Sequence_1",
+        "dtFilteredCo&Sequence_1",
+        "arrPosition&Sequence_1",
+        "strSeason&Sequence_1",
+        "dtFiltered&Sequence_1",
+        "Equals&Sequence_41",
+        "strPositions&Sequence_51",
+        "arrUrl&Sequence_54",
+        "intIndex&Sequence_54"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/03_DT추출3_KBO_2.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "FilteredExtractDataTable&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "CurrentElement_Label&Sequence_1",
+        "CurrentElement&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME/03_ACME_DT추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtFilteredTable&Sequence_2",
+        "outputElement&Sequence_1",
+        "arrCol&Sequence_1",
+        "ExtractDataTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

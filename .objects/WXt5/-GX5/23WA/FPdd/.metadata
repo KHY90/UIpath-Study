@@ -1,0 +1,14 @@
+﻿{
+  "Name": "기록실",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "FPddyniRZ0Gxz9GpWO9teA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/FPddyniRZ0Gxz9GpWO9teA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/23WARL-XOk6yqkax76E-JQ",
+  "Created": "2025-04-07T01:20:52.1366456Z",
+  "Updated": "2025-04-07T01:20:52.1366456Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

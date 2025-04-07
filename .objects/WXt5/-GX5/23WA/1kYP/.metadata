@@ -1,0 +1,14 @@
+﻿{
+  "Name": "선수 기록",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "1kYPgMLL-E-K4sFXTiE3oQ",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/1kYPgMLL-E-K4sFXTiE3oQ",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/23WARL-XOk6yqkax76E-JQ",
+  "Created": "2025-04-07T01:09:57.9013571Z",
+  "Updated": "2025-04-07T01:09:57.9013571Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

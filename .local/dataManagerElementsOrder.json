@@ -220,10 +220,41 @@
       "Path": "03_ACME/03_ACME_DT추출.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dtFilteredTable&Sequence_2",
-        "outputElement&Sequence_1",
+        "strPage&Sequence_19",
+        "intIdex&Sequence_19",
+        "dtFilteredTable&Sequence_1",
         "arrCol&Sequence_1",
         "ExtractDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/04_데이터가공1_기초_문자열.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strReplace&Sequence_16",
+        "strSub&Sequence_17",
+        "strLower&Sequence_18",
+        "strChar&Sequence_1",
+        "arrSplit&Sequence_2",
+        "boolStartC&Sequence_2",
+        "boolRPA&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/04_문자열가공_미션1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strReplaces&Sequence_1",
+        "strReplace&Sequence_1",
+        "strOrigin&Sequence_1",
+        "strPass&Sequence_3",
+        "strPassword&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

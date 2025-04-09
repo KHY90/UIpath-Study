@@ -1,0 +1,14 @@
+﻿{
+  "Name": "가격비교",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "zAhyRC8v0EuzHMIaEFh2sg",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/zAhyRC8v0EuzHMIaEFh2sg",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/WoW7YLpBQU2e8ZW9rBKV0g",
+  "Created": "2025-04-09T03:25:15.7330646Z",
+  "Updated": "2025-04-09T03:25:15.7330646Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

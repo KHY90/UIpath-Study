@@ -73,7 +73,12 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_04_문자열가공_미션1" sap:VirtualizedContainerService.HintSize="817,687" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="_04_문자열가공_미션1" sap:VirtualizedContainerService.HintSize="817,1678" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPassword" />
       <Variable x:TypeArguments="x:String" Name="strOrigin" />
@@ -85,7 +90,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="&lt;문자열가공 미션 1&gt;&#xD;&#xA;누군가 암호를 변경했다. 원래의 암호를 찾으려면 다음과 같은 방법을 수행하라.&#xD;&#xA;&#xD;&#xA;1. 암호 : &quot; r0ck st$r &quot;&#xD;&#xA;2. 단어의 시작과 끝에 무작위 수의 공백을 추가하여 시작 지점과 종료 지점을 알 수 없다.&#xD;&#xA;앞 뒤 공백은 제거하고 문자열 내 &quot; &quot;(공백)은 &quot;_&quot;(언더바)로 변경하라.&#xD;&#xA;3. 만약 패스워드가 &quot;r&quot;로 시작한다면 &quot;$&quot;는 &quot;%&quot;로 변경하라.&#xD;&#xA;4. 출력 : 패스워드 “ r0ck st$r “는 “r0ck_st%r”로 대체됩니다." DisplayName="문자열 가공 미션1 | Sequence" sap:VirtualizedContainerService.HintSize="484,664" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="&lt;문자열가공 미션 1&gt;&#xA;누군가 암호를 변경했다. 원래의 암호를 찾으려면 다음과 같은 방법을 수행하라.&#xA;&#xA;1. 암호 : &quot; r0ck st$r &quot;&#xA;2. 단어의 시작과 끝에 무작위 수의 공백을 추가하여 시작 지점과 종료 지점을 알 수 없다.&#xA;앞 뒤 공백은 제거하고 문자열 내 &quot; &quot;(공백)은 &quot;_&quot;(언더바)로 변경하라.&#xA;3. 만약 패스워드가 &quot;r&quot;로 시작한다면 &quot;$&quot;는 &quot;%&quot;로 변경하라.&#xA;4. 출력 : 패스워드 “ r0ck st$r “는 “r0ck_st%r”로 대체됩니다." DisplayName="문자열 가공 미션1 | Sequence" sap:VirtualizedContainerService.HintSize="538,1655" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -93,7 +98,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="비밀번호 | Assign" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="비밀번호 | Assign" sap:VirtualizedContainerService.HintSize="504,115" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strOrigin]</OutArgument>
         </Assign.To>
@@ -107,7 +112,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Sequence DisplayName="앞 뒤 공백 제거 | Sequence" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="앞 뒤 공백 제거 | Sequence" sap:VirtualizedContainerService.HintSize="504,321" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strPass" />
         </Sequence.Variables>
@@ -125,7 +130,7 @@
             <InArgument x:TypeArguments="x:String">[strOrigin.Trim]</InArgument>
           </Assign.Value>
         </Assign>
-        <WriteLine DisplayName="공백 제거 확인 | Write Line" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;공백 제거 확인 : &quot; + strPassword]">
+        <WriteLine DisplayName="공백 제거 확인 | Write Line" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;공백 제거 확인 : &quot; + strPassword]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -134,7 +139,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </WriteLine>
       </Sequence>
-      <Sequence DisplayName="문자열 내 공백 변경 | Sequence" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="문자열 내 공백 변경 | Sequence" sap:VirtualizedContainerService.HintSize="504,321" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -149,7 +154,7 @@
             <InArgument x:TypeArguments="x:String">[strPassword.Replace(" ", "_")]</InArgument>
           </Assign.Value>
         </Assign>
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;문자열 내 공백 변경 : &quot; + strReplace]">
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;문자열 내 공백 변경 : &quot; + strReplace]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -158,7 +163,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </WriteLine>
       </Sequence>
-      <Sequence DisplayName="문자 변경 | Sequence" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="문자 변경 | Sequence" sap:VirtualizedContainerService.HintSize="504,478" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -194,13 +199,13 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="대체 비밀번호 출력 | Sequence" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="대체 비밀번호 출력 | Sequence" sap:VirtualizedContainerService.HintSize="504,197" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[String.Format(&quot;패스워드 {0}은 {1} 로 대체됩니다.&quot;, strOrigin, strReplaces)]" />
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[String.Format(&quot;패스워드 &quot;&quot;{0}&quot;&quot;은 &quot;&quot;{1}&quot;&quot; 로 대체됩니다.&quot;, strOrigin, strReplaces)]" />
       </Sequence>
     </Sequence>
   </Sequence>

@@ -250,11 +250,56 @@
       "Path": "02_미션/04_문자열가공_미션1.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strReplaces&Sequence_1",
-        "strReplace&Sequence_1",
+        "strPassword&Sequence_1",
         "strOrigin&Sequence_1",
-        "strPass&Sequence_3",
-        "strPassword&Sequence_1"
+        "strReplace&Sequence_1",
+        "strReplaces&Sequence_1",
+        "strPass&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/04_문자열가공_미션2.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strDate&Sequence_5",
+        "strAfter&Sequence_4",
+        "strBefore&Sequence_4",
+        "arrVar3&Sequence_3",
+        "arrVar2&Sequence_3",
+        "strVar4&Sequence_2",
+        "strVar3&Sequence_2",
+        "strVar2&Sequence_2",
+        "strVar1&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "01_이론/04_데이터가공2_심화.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strAfter&Sequence_6",
+        "AssignedObject&Sequence_6",
+        "strBefore&Sequence_6",
+        "arrSubject&Sequence_1",
+        "lstNum&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/04_문자열가공_미션3_네이버쇼핑.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSearch&Sequence_1",
+        "arrSearch&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "FilteredDataTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

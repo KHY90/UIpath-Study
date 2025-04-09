@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rziaJEmwR0OcsGe82riHjQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/search/all" DesignTimeRectangle="158, 1197, 1880, 166" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' parentid='content' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='pagination_pagination__7UBm3' parentid='content' tag='DIV' aaname='' check:innerText='현재 페이지&amp;#xA;12345678910다음' /&gt;" Guid="14f7edc4-e94b-4c60-9ecb-e93863e59026" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3740ffe15a5ecdd64aeb267d2193d57a.png" xmlns="">0IRGk3Q2-7E2HRGeIsIDUfA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScrollSearchedElement</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

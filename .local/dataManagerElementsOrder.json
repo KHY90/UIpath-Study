@@ -323,7 +323,13 @@
       "Path": "03_ACME/04_ACME_세부정보추출.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ExtractDataTable&Sequence_4",
+        "hashText&Sequence_1",
+        "detailText&Sequence_1",
+        "hash&Sequence_1",
+        "clientCountry&Sequence_1",
+        "clientName&Sequence_1",
+        "clientID&Sequence_1",
+        "ExtractDataTable&Sequence_1",
         "arrURL&Sequence_1",
         "ReadDataTable&Sequence_1"
       ],

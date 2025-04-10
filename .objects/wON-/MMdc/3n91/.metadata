@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome 모니터  네이버+ 스토어 검색",
+  "Type": "Screen",
+  "Id": "3n91x6IJE0a3AMopPgxZFw",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/3n91x6IJE0a3AMopPgxZFw",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/MMdcQ_ITMEOThxCqck4kZA",
+  "Created": "2025-04-10T01:17:00.8368617Z",
+  "Updated": "2025-04-10T01:17:00.8368617Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -296,10 +296,36 @@
       "Path": "02_미션/04_문자열가공_미션3_네이버쇼핑.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strSearch&Sequence_1",
         "arrSearch&Sequence_1",
+        "strSearch&Sequence_1",
         "ExtractDataTable&Sequence_1",
         "FilteredDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/05_DT가공_국립공원.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "탐방코스&Sequence_4",
+        "국립공원&Sequence_4",
+        "joinedDT&Sequence_1",
+        "dtSecond&Sequence_1",
+        "dtFiirst&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME/04_ACME_세부정보추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExtractDataTable&Sequence_4",
+        "arrURL&Sequence_1",
+        "ReadDataTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

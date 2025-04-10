@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Z34nf9sBoEevnsmNTBUNiA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="shopping.naver.com/ns/home" DesignTimeRectangle="466, 463, 734, 80" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' class='_searchInput_search_text_83jy9 _searchInput_placeholder_AG5yA _nlog_click' placeholder='상품명 또는 브랜드 입력' aaname='검색어 입력' /&gt;" Guid="64e0a80d-e383-4744-9d17-d9d11709e496" ScopeSelectorArgument="&lt;html app='chrome.exe' title='네이버+ 스토어' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="110, 443, 480, 120" FullSelectorArgument="&lt;webctrl tag='CANVAS' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='CANVAS' type='' class='' aaname='' /&gt;" Guid="6e33e5ef-3b0e-4008-8bee-0f828c4a44da" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2b09a429ed6e0923c42bca3c12092ddf.png" xmlns="">0VkXBBjL46UuVQYyhZppa4Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

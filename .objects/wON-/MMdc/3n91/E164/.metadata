@@ -1,0 +1,14 @@
+﻿{
+  "Name": "40개씩 보기",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "E1649-ub0EeO3ygnGDnG3Q",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/E1649-ub0EeO3ygnGDnG3Q",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/3n91x6IJE0a3AMopPgxZFw",
+  "Created": "2025-04-10T01:17:01.4257358Z",
+  "Updated": "2025-04-10T01:17:01.4257358Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

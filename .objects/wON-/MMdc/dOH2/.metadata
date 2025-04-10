@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome 네이버+ 스토어",
+  "Type": "Screen",
+  "Id": "dOH2iCAXT0SGze4ZyXxKfg",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/dOH2iCAXT0SGze4ZyXxKfg",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/MMdcQ_ITMEOThxCqck4kZA",
+  "Created": "2025-04-10T00:39:10.4220041Z",
+  "Updated": "2025-04-10T00:39:10.4220041Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

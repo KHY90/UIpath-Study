@@ -1,0 +1,13 @@
+﻿{
+  "Name": "본문으로 바로가기NAVER네이버페이사용자 …",
+  "Type": "Element",
+  "Id": "c9-5XBCcv0mJwzmHJ26xAA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/c9-5XBCcv0mJwzmHJ26xAA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/dOH2iCAXT0SGze4ZyXxKfg",
+  "Created": "2025-04-10T00:51:04.9591345Z",
+  "Updated": "2025-04-10T00:51:04.9591345Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

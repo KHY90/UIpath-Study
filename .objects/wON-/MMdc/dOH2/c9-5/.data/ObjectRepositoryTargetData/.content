@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Hkp3R_H9sUmBVVvq_UolCQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/ns/search" DesignTimeRectangle="13, 255, 2850, 21605" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' type='' class='layout_wrap__hjxgU' aaname='' check:innerText='본문으로 바로가기&amp;#xA;NAVER&amp;#xA;네이버페이&amp;#xA;사용자 링크&amp;#xA; 흰둥이90&amp;#xA;내정보 보기&amp;#xA;네이버톡&amp;#xA;알림&amp;#xA;메일&amp;#xA;2&amp;#xA;서비스 더보기&amp;#xA;네이버플러스 스토어&amp;#xA;검색영역&amp;#xA;입력 내용 삭제&amp;#xA;검색레이어 펼치기' /&gt;" Guid="96f2bdbf-a030-4e61-a6a5-fd7abe3d169f" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="02c10cad6f42c7590f5be9bf6e20164a.png" xmlns="">0JsfDj0JMDUOKOqNuZKNkkg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScroll</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

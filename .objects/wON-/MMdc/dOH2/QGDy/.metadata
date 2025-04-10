@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CANVAS",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "QGDyVRMmT02K82mLtzQyoA",
+  "Reference": "zqQg-QMm0kO7nRa_3zCrag/QGDyVRMmT02K82mLtzQyoA",
+  "ParentRef": "zqQg-QMm0kO7nRa_3zCrag/dOH2iCAXT0SGze4ZyXxKfg",
+  "Created": "2025-04-10T00:39:42.09113Z",
+  "Updated": "2025-04-10T00:39:42.09113Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

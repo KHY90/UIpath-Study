@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryScreenData ContentHash="T-mnh3q3OUazCUM0bJXjYA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryScreenData.Data>
-    <TargetApp x:Key="TargetApp" Area="-13, -13, 2906, 1730" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAH6SURBVDhPbVJNiE1hGH5mTGqSvwVT3Hve9xxXSpREWSg2FspCzLC4k7nnec+dotBMyl+6GwuSEguWLJQsbElEFvbKQig0Cz8JRTMycnW+73R+bvetd3Ge8zzv97w/QL+QiWUQuwCxV1D7BeEMxPb10vpH7dBqiL2GWjdP4R+ozWV5D1Frba9sAIElCHgeyvsVcf/8jjq3FHKJT2U/jhUkPkEQGyTZhqC1GWGyx7fFD96VvUdtahiIxldC+BtqsxBOO5sBm2V70Picm4fYWQTcD7HTvi224QD/4lsILzoXwhtQe+QcoDsAsRjCF2g0l0DtHYQPoTYBja+n1Q9kBd54QWcQGFvgXAh/IIq3O0zsqtuE8EjGf4mwvREQ3oLaP2/98PKqdR6H8DPWtOoIbReU3xDEo/mchNcAsS8FEO+uFAhtJCNOu283UDZLBT6lBZ6W1vO4UqDOVdnEL+WY2FSJ301ttitAaElB5hmPJ5Pue2R8kVtfzucMgB1DbuIe/Aq154i4AcqTUM47wTouBjpDEN6pPCZ2xb9UGx2G2mUof7rbV/vrBit8hpo13Omm7RXidOgf0YhX5G69ZdsJ5Qkoj0K416/S7kI4XxLPQXkbYXtrVZxGNLk0O5LCZiXTltjC+rGFvdJSdAahdhDCB9mKZ7PruwlJNvWy/wN0VudbOfb6QgAAAABJRU5ErkJggg==" Selector="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" Title="타자 | 선수 기록 | 기록실 | 기록/순위 | KBO" Url="https://www.koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" Version="V1">
-      <imageRef attrName="InformativeScreenshot" originalValue="7e76fa79eea5dd81e867f7005a5ba979.jpg" xmlns="">0um374TlLSU--3-AhCcW9Rg</imageRef>
-    </TargetApp>
-  </ObjectRepositoryScreenData.Data>
-</ObjectRepositoryScreenData>

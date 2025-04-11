@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="plvh3fwBFUS3E8cxTneFFA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="koreabaseball.com/Record/Player/HitterBasic/BasicOld.aspx" DesignTimeRectangle="1132, 1068, 196, 52" DesignTimeScaleFactor="2" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cphContents_cphContents_cphContents_ddlSeries_ddlSeries' tag='SELECT' type='' class='select02' aaname='' /&gt;" Guid="e047a797-08d8-45e5-8f23-3bab8869c63a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='타자 | 선수 기록 | 기록실 | 기록/순위 | KBO' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="a9cb2b3f165654b2cae2ef1f4eb5ee7c.png" xmlns="">0MQvPBLWh3UCtpsA109RvqQ</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">SelectItem</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

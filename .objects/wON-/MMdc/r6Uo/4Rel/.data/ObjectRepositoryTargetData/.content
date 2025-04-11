@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xxyhJTFTTUCE6D9DbvCCcg" Reference="zqQg-QMm0kO7nRa_3zCrag/4RelsyeGs0q0U8j3_PNhWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/ns/search" DesignTimeRectangle="732, 1059, 388, 730" DesignTimeScaleFactor="2" ElementType="ListItem" FullSelectorArgument="&lt;webctrl parentid='basic_product_card_information_11324941836' tag='STRONG' class='basicProductCardInformation_title__Bc_Ng' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;strong' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='compositeCardContainer_composite_card_container__jr8cb composite_card_container' parentid='composite-card-list' tag='LI' aaname='' /&gt;" Guid="1adb1d19-a411-4ea8-814e-1cf3ecfc08c9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0b84923401b0b58ff847d08acfd409f0.png" xmlns="">0bTXeDd9UakmZqlPrOorqTQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

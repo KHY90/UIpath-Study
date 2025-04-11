@@ -323,15 +323,32 @@
       "Path": "03_ACME/04_ACME_세부정보추출.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "hashText&Sequence_1",
-        "detailText&Sequence_1",
-        "hash&Sequence_1",
-        "clientCountry&Sequence_1",
-        "clientName&Sequence_1",
-        "clientID&Sequence_1",
-        "ExtractDataTable&Sequence_1",
+        "ReadDataTable&Sequence_1",
         "arrURL&Sequence_1",
-        "ReadDataTable&Sequence_1"
+        "ExtractDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "hash&Sequence_1",
+        "hashText&Sequence_1",
+        "index&Sequence_1",
+        "strUrl&Sequence_37",
+        "listInfo&Sequence_37"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argument2",
+        "argument3",
+        "argument1"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "02_미션/04_문자열가공_미션4_네이버쇼핑.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSub&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

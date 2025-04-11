@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6vvOK1L9rEmUyEz82VcOrQ" Reference="zqQg-QMm0kO7nRa_3zCrag/YqabP3DgOUabPnHpJQKJHg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/ns/search" DesignTimeRectangle="732, 955, 388, 730" DesignTimeScaleFactor="2" ElementType="ListItem" FullSelectorArgument="&lt;webctrl omit:parentid='basic_product_card_information_11324941836' tag='STRONG' aaname='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' innertext='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' visibleinnertext='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='compositeCardContainer_composite_card_container__jr8cb composite_card_container' parentid='composite-card-list' tag='LI' aaname='' check:innerText='해당 상품 찜하기&amp;#xA;삼성전자공식파트너 큐소닉&amp;#xA;인증&amp;#xA;삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD&amp;#xA;나의 할인가&amp;#xA;할인 전 판매가&amp;#xA;630' /&gt;" Guid="c0765cc5-239c-4555-a72d-65b040ad3dba" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="23f70645ffe86be4d5e4777f8c1f03e7.png" xmlns="">01FYDQEmeUEyySyOkIueD0A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

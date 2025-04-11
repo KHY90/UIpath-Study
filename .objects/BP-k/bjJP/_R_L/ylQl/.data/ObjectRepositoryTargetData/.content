@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qXlbBq2lV02zuhwh6nrLWw" Reference="zqQg-QMm0kO7nRa_3zCrag/ylQlcLyWJkuuZCpsuiRYPA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="acme-test.uipath.com/work-items" DesignTimeRectangle="518, 1109, 24, 24" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl omit:aaname='                                      ' omit:css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;a' href='https://acme-test.uipath.com/work-items/105583279' tableCol='1' tableRow='3' tag='A' /&gt;" Guid="a2ca7c79-b0aa-4666-b24c-58c094fe89fa" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ad5f7de95cd4837e8241621b0ae0f948.png" xmlns="">0rTvrBHNbP0-IHMSp7ZhWdw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

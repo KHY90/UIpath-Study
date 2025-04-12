@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_04_문자열가공_미션4_네이버쇼핑" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="_04_문자열가공_미션4_네이버쇼핑_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_04_문자열가공_미션4_네이버쇼핑" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="_04_문자열가공_미션4_네이버쇼핑_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,6 +42,12 @@
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,15 +101,26 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_04_문자열가공_미션4_네이버쇼핑" sap:VirtualizedContainerService.HintSize="817,1078" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_04_문자열가공_미션4_네이버쇼핑" sap:VirtualizedContainerService.HintSize="761,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="arrNaverInput" />
+      <Variable x:TypeArguments="s:String[]" Name="arrProdName" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;미션 시작&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;미션 시작&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -111,20 +128,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence sap:VirtualizedContainerService.HintSize="616,950" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap:VirtualizedContainerService.HintSize="608,1964" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 모니터  네이버+ 스토어 검색" sap:VirtualizedContainerService.HintSize="582,858" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="46799e9f-e344-4023-b72c-a0764298ced2" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 모니터  네이버+ 스토어 검색(2)" sap:VirtualizedContainerService.HintSize="574,1872" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="46799e9f-e344-4023-b72c-a0764298ced2" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,617" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,1631" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strSub" />
               </Sequence.Variables>
@@ -133,87 +150,126 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NForEachUiElement DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="514,391" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="46799e9f-e344-4023-b72c-a0764298ced2" Version="V4">
-                <uix:NForEachUiElement.Body>
-                  <ActivityAction x:TypeArguments="x:Int32">
+              <Assign sap:VirtualizedContainerService.HintSize="506,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrNaverInput]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[{ "모니터", "세탁기", "냉장고" }]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="506,1454" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrNaverInput]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="504,1330" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="470,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="46799e9f-e344-4023-b72c-a0764298ced2" Text="[currentText + &quot;[k(Enter)]&quot;]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="shopping.naver.com/ns/home" ContentHash="SKMCPgzRGEeiJ3eaou7REQ" DesignTimeRectangle="466, 359, 734, 80" DesignTimeScaleFactor="2" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' class='_searchInput_search_text_83jy9 _searchInput_placeholder_AG5yA _nlog_click' placeholder='상품명 또는 브랜드 입력' aaname='검색어 입력' /&gt;" Guid="f1ff2d85-4e55-4ec5-8fdb-802a6b8b91e0" InformativeScreenshot="af0badc98d01c2696962f1a428d6546a.png" Reference="zqQg-QMm0kO7nRa_3zCrag/j3gQtEvyOUuWoRivIUpjYg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='네이버+ 스토어' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="158, 285, 92, 20" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='_gnbHeader_icon_naver_Of-O0' aaname='' /&gt;" Guid="86cc63f9-9dd5-463c-ab56-3eb6182c1148" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,322" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="416,262" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="10" Version="V4">
+                              <uix:NMouseScroll.SearchedElement>
+                                <uix:SearchedElement>
+                                  <uix:SearchedElement.Target>
+                                    <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/ns/search" ContentHash="cNRUsDvtuEObiE3mlCbAZg" DesignTimeRectangle="688, 813, 2030, 10613" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl id='composite-card-list' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='composite-card-list' tag='DIV' type='' class='compositeCardList_composite_card_list__55sy4' aaname='' check:innerText='상품목록&amp;#xA;해당 상품 찜하기&amp;#xA;광고&amp;#xA;삼성전자공식파트너 큐소닉&amp;#xA;인증&amp;#xA;삼성전자 F24T350 60.4cm IPS 패널 75Hz 모니터 온라인 인터넷강의&amp;#xA;나의 할인가&amp;#xA;할인 전 판매가' /&gt;" Guid="ef2b8fe9-0e13-46d1-aab2-012ccd62a702" InformativeScreenshot="3d031ff7946eed61f87bd1d82695a6a0.png" Reference="zqQg-QMm0kO7nRa_3zCrag/2aVET_ICR0aFYbobZ97jtg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                  </uix:SearchedElement.Target>
+                                  <uix:SearchedElement.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:SearchedElement.Timeout>
+                                </uix:SearchedElement>
+                              </uix:NMouseScroll.SearchedElement>
+                            </uix:NMouseScroll>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DelayAfter="1" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='dd'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="470,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="46799e9f-e344-4023-b72c-a0764298ced2" Version="V4">
+                        <uix:NExtractData.Target>
+                          <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/ns/search?query=%EB%AA%A8%EB%8B%88%ED%84%B0" DesignTimeRectangle="732, 545, 1940, 9326" DesignTimeScaleFactor="2" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='composite-card-list' tag='UL' /&gt;" Guid="1d162d38-73bd-4386-9e4c-101f695d93b1" InformativeScreenshot="42adbf3ffae798c0855cf5a8c6b962db.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        </uix:NExtractData.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NExtractData>
+                      <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[arrProdName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[ExtractDataTable.Rows(0)(0).ToString().Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentName" sap:VirtualizedContainerService.HintSize="470,657" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrProdName]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="currentName" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,535" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="strProdNM" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[strProdNM]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[If(currentName.Length &gt; 30, currentName.Substring(0, 30), currentName)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ strProdNM }]" DataTable="[ExtractDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,221" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                              <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[currentText]" WorkbookPath="Data\Output\네이버플러스.xlsx" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
                     </Sequence>
                   </ActivityAction>
-                </uix:NForEachUiElement.Body>
-                <uix:NForEachUiElement.Target>
-                  <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/ns/search?query=%EB%AA%A8%EB%8B%88%ED%84%B0" ContentHash="281Wb2Wr8Eyq_RtgoV2jag" DesignTimeRectangle="732, -1151, 1940, 10316" DesignTimeScaleFactor="2" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='composite-card-list' tag='UL' /&gt;" Guid="30359dc6-b125-4a7e-8fe0-a68af80405b5" InformativeScreenshot="bc2b636288d34e5cf84bcf743e811f03.png" Reference="zqQg-QMm0kO7nRa_3zCrag/BB6CF5O6f06oKz-QZPrQOg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                </uix:NForEachUiElement.Target>
-                <uix:NForEachUiElement.Variables>
-                  <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
-                  <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
-                </uix:NForEachUiElement.Variables>
-                <uix:NForEachUiElement.VariablesMetadata>
-                  <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
-                    <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
-                    <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
-                  </scg:List>
-                </uix:NForEachUiElement.VariablesMetadata>
-              </uix:NForEachUiElement>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetText DisplayName="Get Text '해당 상품 찜하기 삼성전자공식파트너 큐소닉…(1)'" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="46799e9f-e344-4023-b72c-a0764298ced2" TextString="[strSub]" Version="V4">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/ns/search" ContentHash="xxyhJTFTTUCE6D9DbvCCcg" DesignTimeRectangle="732, 1059, 388, 730" DesignTimeScaleFactor="2" ElementType="ListItem" FullSelectorArgument="&lt;webctrl parentid='basic_product_card_information_11324941836' tag='STRONG' class='basicProductCardInformation_title__Bc_Ng' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;strong' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='compositeCardContainer_composite_card_container__jr8cb composite_card_container' parentid='composite-card-list' tag='LI' aaname='' /&gt;" Guid="1adb1d19-a411-4ea8-814e-1cf3ecfc08c9" InformativeScreenshot="0b84923401b0b58ff847d08acfd409f0.png" Reference="zqQg-QMm0kO7nRa_3zCrag/4RelsyeGs0q0U8j3_PNhWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                      </uix:NGetText.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NGetText>
-                  </Sequence>
-                </ui:CommentOut.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:CommentOut>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="selecteditem" DisplayName="Get Attribute '해당 상품 찜하기 삼성전자공식파트너 큐소닉…'" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strSub]" ScopeIdentifier="46799e9f-e344-4023-b72c-a0764298ced2" Version="V4">
-                <uix:NGetAttributeGeneric.Target>
-                  <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/ns/search" ContentHash="6vvOK1L9rEmUyEz82VcOrQ" DesignTimeRectangle="732, 955, 388, 730" DesignTimeScaleFactor="2" ElementType="ListItem" FullSelectorArgument="&lt;webctrl omit:parentid='basic_product_card_information_11324941836' tag='STRONG' aaname='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' innertext='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' visibleinnertext='삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='compositeCardContainer_composite_card_container__jr8cb composite_card_container' parentid='composite-card-list' tag='LI' aaname='' check:innerText='해당 상품 찜하기&amp;#xA;삼성전자공식파트너 큐소닉&amp;#xA;인증&amp;#xA;삼성전자 스마트모니터 M7 S43DM701 화이트 107.9cm(43인치) 4K UHD&amp;#xA;나의 할인가&amp;#xA;할인 전 판매가&amp;#xA;630' /&gt;" Guid="c0765cc5-239c-4555-a72d-65b040ad3dba" InformativeScreenshot="23f70645ffe86be4d5e4777f8c1f03e7.png" Reference="zqQg-QMm0kO7nRa_3zCrag/YqabP3DgOUabPnHpJQKJHg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                </uix:NGetAttributeGeneric.Target>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </uix:NGetAttributeGeneric>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="514,50" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strSub]">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </WriteLine>
+                </ui:ForEach.Body>
+              </ui:ForEach>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="6YirQFM7dUOWS7RNj5qxsA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAEcSURBVFhHY2AYBaNgFIyCwQKYj0fvZz4e9Z9UXOz2mXTs/nk/uv0M6AYTizEMJxKj2z+4HCB8OuV/4+M1YKx8Lh8s5nS1GcxPujODKAe8e/H3/52LfzDEiXIAyFIYOPDxGlgMZDmEf5UoB4DA2xd/McRJdgAIFN5fTJQDWmK/wjHMATB+deAX8hxw/8fr/+9/f/2/4e0Zgg4ABTsucGrnb/IcAIp7ZIDPAYfW/QJbBMKXj0JoGF7e/Z08B4D4E59vI8oByBgEDq3/hSFOlgNAGJQYSXUA2YmQFIxuMAyv6P7+f349arDT1QGEMLr9DMzHot+jG04MRjeYWIxuPwPzsZgAluNRDaTiErfPpGOPzw7o9o+CUTAKRsGAAQBBDv7OpPaQ1gAAAABJRU5ErkJggg==" InformativeScreenshot="89fa8f812cc23c84ef832f347245eb15.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/r6Uo1nzhIkmj19EX_Jhtlg" Selector="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" Title="모니터 : 네이버+ 스토어 검색" Url="https://search.shopping.naver.com/ns/search?query=%EB%AA%A8%EB%8B%88%ED%84%B0" Version="V1" />
+          <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="e4r41TV-kE-WHtqD9ajTdg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAEcSURBVFhHY2AYBaNgFIyCwQKYj0fvZz4e9Z9UXOz2mXTs/nk/uv0M6AYTizEMJxKj2z+4HCB8OuV/4+M1YKx8Lh8s5nS1GcxPujODKAe8e/H3/52LfzDEiXIAyFIYOPDxGlgMZDmEf5UoB4DA2xd/McRJdgAIFN5fTJQDWmK/wjHMATB+deAX8hxw/8fr/+9/f/2/4e0Zgg4ABTsucGrnb/IcAIp7ZIDPAYfW/QJbBMKXj0JoGF7e/Z08B4D4E59vI8oByBgEDq3/hSFOlgNAGJQYSXUA2YmQFIxuMAyv6P7+f349arDT1QGEMLr9DMzHot+jG04MRjeYWIxuPwPzsZgAluNRDaTiErfPpGOPzw7o9o+CUTAKRsGAAQBBDv7OpPaQ1gAAAABJRU5ErkJggg==" InformativeScreenshot="35623874a6bb9f8145b1e757021d6f85.jpg" Reference="zqQg-QMm0kO7nRa_3zCrag/_3fKrGGBdUCsa6dtm8T-nQ" Selector="&lt;html app='chrome.exe' title='네이버+ 스토어' /&gt;" Title="네이버+ 스토어" Url="https://shopping.naver.com/ns/home" Version="V1" />
         </uix:NApplicationCard.TargetApp>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -223,7 +279,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;미션 종료&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;미션 종료&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

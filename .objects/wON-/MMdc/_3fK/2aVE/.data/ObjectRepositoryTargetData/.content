@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="cNRUsDvtuEObiE3mlCbAZg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/ns/search" DesignTimeRectangle="688, 813, 2030, 10613" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl id='composite-card-list' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='composite-card-list' tag='DIV' type='' class='compositeCardList_composite_card_list__55sy4' aaname='' check:innerText='상품목록&amp;#xA;해당 상품 찜하기&amp;#xA;광고&amp;#xA;삼성전자공식파트너 큐소닉&amp;#xA;인증&amp;#xA;삼성전자 F24T350 60.4cm IPS 패널 75Hz 모니터 온라인 인터넷강의&amp;#xA;나의 할인가&amp;#xA;할인 전 판매가' /&gt;" Guid="ef2b8fe9-0e13-46d1-aab2-012ccd62a702" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3d031ff7946eed61f87bd1d82695a6a0.png" xmlns="">0Qaz0IobGE0qWvRRleWUBqQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScrollSearchedElement</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

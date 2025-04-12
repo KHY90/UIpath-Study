@@ -348,7 +348,29 @@
       "Path": "02_미션/04_문자열가공_미션4_네이버쇼핑.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strProdNM&Sequence_7",
+        "arrProdName&Sequence_1",
+        "ExtractDataTable&Sequence_6",
+        "arrNaverInput&Sequence_1",
         "strSub&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME/04_ACME_Hash.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strHash&Sequence_15",
+        "dtClientInfo&Sequence_15",
+        "strInputMessage&Sequence_15",
+        "ReadDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "ExtractDataTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

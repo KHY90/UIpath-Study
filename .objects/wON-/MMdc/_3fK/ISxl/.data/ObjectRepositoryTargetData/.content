@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4522jZYzLk-jbbmEQc9ziw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/ns/search" DesignTimeRectangle="688, 551, 2030, 534" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div' idx='122' parentid='composite-card-list' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='keywordRecommend_keyword_recommend__48ne5' parentid='composite-card-list' tag='DIV' aaname='' check:innerText='다른 상품을 찾으시나요?&amp;#xA;&amp;#xA;함께 많이 찾는 검색어를 추천해 드려요.&amp;#xA;&amp;#xA;40인치모니터&amp;#xA;휴대용모니터&amp;#xA;32인치모니터&amp;#xA;게이밍모니터&amp;#xA;4k모니터&amp;#xA;모니터암&amp;#xA;컴퓨터모니터&amp;#xA;삼성모니터&amp;#xA;스마트모니터' /&gt;" Guid="1e37da5d-f110-4b0c-91a2-d0126e6a057f" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버+ 스토어 검색' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8c755b915edb36200c777a38b2f97f42.png" xmlns="">0DDqlOCIqskq6QF5N6_vzHQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScrollSearchedElement</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

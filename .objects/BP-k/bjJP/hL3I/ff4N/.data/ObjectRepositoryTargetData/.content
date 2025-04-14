@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="IN0YD5u4CEmRNGi-nzLXoQ" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="UtKArDPVB0OGBtHAdr-PCA" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items?page=1" ContentHash="KOVBOT37PE-v_pJMkozwzA" DesignTimeRectangle="440, 519, 1996, 854" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="c1bd5d1d-2b3a-4f2a-9ba7-a1e069ae3e06" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="e76dac0f747c936f65358485ff0ce8f7.png" xmlns="">0651yW5fnUkyUZXCgylfyhw</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items" ContentHash="IN0YD5u4CEmRNGi-nzLXoQ" DesignTimeRectangle="440, 519, 1996, 854" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="6f4db2ea-6b6c-40e7-9cfd-e05f29f856f1" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e76dac0f747c936f65358485ff0ce8f7.png" xmlns="">0lkTiO0iU2EyQSXHiKZeNng</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">ExtractData</x:String>
     <p:InArgument x:TypeArguments="x:String" x:Key="ExtractDataSettings" xml:space="preserve">&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;
@@ -57,6 +57,6 @@
 	&lt;/Column&gt;
 	&lt;Column xsi:type='DataNextLink' /&gt;
 &lt;/Table&gt;</p:InArgument>
-    <TargetAnchorable x:Key="NextLinkTarget" BrowserURL="acme-test.uipath.com/work-items" DesignTimeRectangle="2382, 1403, 44, 44" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='Next »' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Next »' tag='A' type='' class='page-numbers' aaname='&amp;gt;' check:innerText='&amp;gt;' /&gt;" Guid="7b6d7176-010f-4bde-9fa4-a6bb97196c3c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+    <TargetAnchorable x:Key="NextLinkTarget" BrowserURL="acme-test.uipath.com/work-items" DesignTimeRectangle="2382, 1603, 44, 44" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='Next »' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Next »' tag='A' type='' class='page-numbers' aaname='&amp;gt;' check:innerText='&amp;gt;' /&gt;" Guid="86a027dc-1c14-464d-ba3a-3ea334e4101d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
   </ObjectRepositoryTargetData.Data>
 </ObjectRepositoryTargetData>

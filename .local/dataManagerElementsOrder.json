@@ -359,18 +359,46 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "03_ACME/04_ACME_Hash.xaml",
+      "Path": "03_ACME/05_ACME_Hash.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strHash&Sequence_15",
-        "dtClientInfo&Sequence_15",
-        "strInputMessage&Sequence_15",
+        "strInputMessage&Sequence_29",
+        "dtClientInfo&Sequence_29",
+        "strHash&Sequence_29",
+        "intIndex&Sequence_1",
         "ReadDataTable&Sequence_1",
         "detailText&Sequence_1",
         "clientID&Sequence_1",
         "clientName&Sequence_1",
         "clientCountry&Sequence_1",
         "ExtractDataTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME/06_ACME_UPDATE.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strHash&Sequence_21",
+        "strWIID&Sequence_21",
+        "strUrl&Sequence_18",
+        "strUrl&Sequence_1",
+        "strUrl&Sequence_3",
+        "dtHash&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME/07_ACME_작업확인.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtResultDT&Sequence_1",
+        "strResult&Sequence_2",
+        "ExtractDataTable&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

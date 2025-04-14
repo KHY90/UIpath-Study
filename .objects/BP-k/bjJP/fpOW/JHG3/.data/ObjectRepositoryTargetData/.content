@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wjVoPnF_BUW_taFwRnneCw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="acme-test.uipath.com/work-items/105583247" CVScreenId="70497079-f93c-48d5-a142-3ef02b943eee" CvElementArea="1719, 284, 154, 100" CvTextArea="1767, 317, 56, 34" CvTextArgument="2,91" CvType="Button" DesignTimeRectangle="1733, 297, 128, 76" DesignTimeScaleFactor="2" ElementType="Button" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com 내용:' role='dialog' /&gt;&lt;ctrl name='확인' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com 내용:' role='dialog' /&gt;&lt;ctrl name='확인' role='push button' automationid='' check:fulltext='확인' /&gt;" Guid="d9c79291-4d76-4fce-aa07-427b66659c70" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="70497079-f93c-48d5-a142-3ef02b943eee" CvTextArea="1043, 231, 472, 26" CvTextArgument="Please fill in the complete update form!" CvType="Text" DesignTimeRectangle="1045, 225, 816, 40" ElementType="Text" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com 내용:' role='dialog' /&gt;&lt;ctrl name='Please fill in the complete update form!' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com 내용:' role='dialog' /&gt;&lt;ctrl name='Please fill in the complete update form!' role='text' automationid='' /&gt;" Guid="713d4bbe-af44-4503-8e01-a7dfa617175c" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c06f3847814a986ee2df007b714417c1.png" xmlns="">0Ha21fk2QmU-5P7qrbEGjMw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

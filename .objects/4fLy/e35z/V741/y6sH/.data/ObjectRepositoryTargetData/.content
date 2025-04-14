@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Z8NOjBF9OE-Qi-f2s7NFZQ" Reference="zqQg-QMm0kO7nRa_3zCrag/y6sHezyI9kegY78s3WZIKw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="sha1-online.com" DesignTimeRectangle="13, 255, 2880, 1462" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl id='aswift_1' tag='IFRAME' /&gt;&lt;webctrl id='ad_position_box' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='aswift_1' tag='IFRAME' /&gt;&lt;webctrl id='ad_position_box' tag='DIV' type='' class='' aaname='' check:innerText='Ad' /&gt;" Guid="8a99218f-22c1-4666-99c6-70ce8bc966ef" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="79695f3c7c730ec90212f13e3d7bb6af.png" xmlns="">0XmiZa1JsWEOlJ1TScY6vkg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

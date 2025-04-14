@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="G8XhNGOy00SY14HhXu_bwA" Reference="zqQg-QMm0kO7nRa_3zCrag/uCTFz48VjUex2XJFbc7Arw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="sha1-online.com" DesignTimeRectangle="1703, 693, 28, 28" DesignTimeScaleFactor="2" ElementType="Icon" FullSelectorArgument="&lt;webctrl id='aswift_2' tag='IFRAME' /&gt;&lt;webctrl id='ad_iframe' tag='IFRAME' /&gt;&lt;webctrl id='dismiss-button' tag='DIV' aria-label='Close ad' /&gt;" FuzzySelectorArgument="&lt;webctrl id='aswift_1' tag='IFRAME' /&gt;&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="2bb3cdd8-7c77-45e2-814a-ab2431c8c5f7" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ef19ccfa4a9bd75637387e16bae943d4.png" xmlns="">0SmhWpeDlMkiNZH4oSn4arA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

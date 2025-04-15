@@ -11,7 +11,13 @@
     {
       "Path": "Main.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "intIndex&Sequence_11",
+        "dtFilteredTable&Sequence_12",
+        "sstrPassword&Sequence_1",
+        "strID&Sequence_1",
+        "dtFilteredTable&Sequence_11"
+      ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -399,6 +405,218 @@
         "dtResultDT&Sequence_1",
         "strResult&Sequence_2",
         "ExtractDataTable&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/06_ACME_UPDATE.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strUrl&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/05_ACME_Hash.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ReadDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "intIndex&Sequence_1",
+        "strInputMessage&Sequence_29",
+        "strHash&Sequence_29"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/01_ACME_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "blLogOut&Sequence_1",
+        "uiLogout&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_sstrPassword",
+        "in_strID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/02_ACME_메뉴진입.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/03_ACME_DT추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExtractDataTable&Sequence_1",
+        "arrCol&Sequence_1",
+        "intIdex&Sequence_19",
+        "strPage&Sequence_19"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/04_ACME_세부정보추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrURL&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "hash&Sequence_1",
+        "hashText&Sequence_1",
+        "index&Sequence_1",
+        "strUrl&Sequence_37",
+        "listInfo&Sequence_37"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈1/07_ACME_작업확인.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtFilteredTable&Sequence_1",
+        "ExtractDataTable&Sequence_2",
+        "strResult&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/03_ACME_DT추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExtractDataTable&Sequence_1",
+        "arrCol&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/01_ACME_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "blLogOut&Sequence_1",
+        "uiLogout&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strID",
+        "in_sstrPassword"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/02_ACME_메뉴진입.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/04_ACME_세부정보추출.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrURL&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "hash&Sequence_1",
+        "hashText&Sequence_1",
+        "index&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_CurrentRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/07_ACME_가공완료DT기록.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtFilteredTable"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/06_ACME_UPDATE.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strUrl&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_CurrentRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/05_ACME_Hash.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ReadDataTable&Sequence_1",
+        "detailText&Sequence_1",
+        "clientID&Sequence_1",
+        "clientName&Sequence_1",
+        "clientCountry&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "intIndex&Sequence_1",
+        "strInputMessage&Sequence_29",
+        "strHash&Sequence_29"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_CurrentRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "03_ACME_모듈2/08_ACME_작업확인.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtResultDT&Sequence_1",
+        "ExtractDataTable&Sequence_2",
+        "strResult&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

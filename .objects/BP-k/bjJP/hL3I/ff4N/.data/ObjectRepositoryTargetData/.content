@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="UtKArDPVB0OGBtHAdr-PCA" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="_Sy4Nq7NGUKjq1rczx0bqw" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items" ContentHash="IN0YD5u4CEmRNGi-nzLXoQ" DesignTimeRectangle="440, 519, 1996, 854" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="6f4db2ea-6b6c-40e7-9cfd-e05f29f856f1" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="e76dac0f747c936f65358485ff0ce8f7.png" xmlns="">0lkTiO0iU2EyQSXHiKZeNng</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items" ContentHash="UtKArDPVB0OGBtHAdr-PCA" DesignTimeRectangle="440, 930, 1996, 854" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="223ad0f0-bdf2-47fa-9592-4c60a43caff0" Reference="zqQg-QMm0kO7nRa_3zCrag/ff4NquF8V0ay2TYOxQpmCA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e76dac0f747c936f65358485ff0ce8f7.png" xmlns="">0rwPLPeyUpkC0m9hXcSQNdA</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">ExtractData</x:String>
     <p:InArgument x:TypeArguments="x:String" x:Key="ExtractDataSettings" xml:space="preserve">&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;

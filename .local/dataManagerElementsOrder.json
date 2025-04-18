@@ -12,11 +12,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "intIndex&Sequence_11",
-        "dtFilteredTable&Sequence_12",
         "sstrPassword&Sequence_1",
         "strID&Sequence_1",
-        "dtFilteredTable&Sequence_11"
+        "dtFilteredTable&Sequence_12",
+        "dtFilteredTable&Sequence_11",
+        "intIndex&Sequence_11"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -617,6 +617,89 @@
         "dtResultDT&Sequence_1",
         "ExtractDataTable&Sequence_2",
         "strResult&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "../../../../../AppData/Local/Programs/UiPath/Studio/Snippets/Windows/SnippetsVBasic/Samples/Advanced/Counter Example.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Counter&Flowchart_1",
+        "Iterations&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "../../../../../AppData/Local/Programs/UiPath/Studio/Snippets/Windows/SnippetsVBasic/Samples/Advanced/Filter Collection using LINQ.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "names&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "../../../../../AppData/Local/Programs/UiPath/Studio/Snippets/Windows/SnippetsVBasic/Samples/Calculator Automation.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "winFolder&Sequence_1",
+        "resultValue&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "../../../../../AppData/Local/Programs/UiPath/Studio/Snippets/Windows/SnippetsVBasic/Samples/Ping Monitor.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPing&Flowchart_1",
+        "output&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Mail/01_SMTP_이메일발송.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strEmail&Sequence_1",
+        "strMailHTML&Sequence_2",
+        "lstAttach&Sequence_2",
+        "sstrPassword&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Mail/02_IMAP_이메일수신.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "intIndex&Sequence_2",
+        "mailMessage&Sequence_2",
+        "sstrPassword&Sequence_2",
+        "strID&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Mail/03_HTML형식DT_이메일발송.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtResult&Sequence_1",
+        "strBody&Sequence_1",
+        "sstrPassword&Sequence_1",
+        "strID&Sequence_1",
+        "strTable&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],

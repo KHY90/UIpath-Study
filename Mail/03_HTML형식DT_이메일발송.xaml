@@ -111,7 +111,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_03_HTML형식DT_이메일발송" sap:VirtualizedContainerService.HintSize="817,2085" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_HTML형식DT_이메일발송" sap:VirtualizedContainerService.HintSize="765,2085" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtResult" />
       <Variable x:TypeArguments="x:String" Name="strTable" />
@@ -195,7 +195,7 @@
       </ui:LogMessage>
       <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="GmailUIpath" CacheStrategy="None" DisplayName="Get Credential" FolderPath="power4206@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPassword]" Username="[strID]" />
       <ui:ReadTextFile File="{x:Null}" Content="[strBody]" DisplayName="Read Text File" FileName="Mail\메일형식.txt" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[String.Format(strBody, Now.ToString.Trim, strTable)]" DisplayName="Send SMTP Mail Message" Email="[strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[sstrPassword]" Server="smtp.gmail.com" Subject="DT to HTML TEST" To="power4206@gmail.com">
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[String.Format(strBody, Now.ToString(&quot;yy년 MM월 dd일&quot;).Trim, strTable)]" DisplayName="Send SMTP Mail Message" Email="[strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[sstrPassword]" Server="smtp.gmail.com" Subject="DT to HTML TEST" To="power4206@gmail.com">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
         </ui:SendMail.Files>

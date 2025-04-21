@@ -704,6 +704,20 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "../../../../../AppData/Local/Programs/UiPath/Studio/Snippets/Windows/SnippetsVBasic/Snippets/Mail/03_HTML형식DT_이메일발송.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strTable&Sequence_1",
+        "strID&Sequence_1",
+        "sstrPassword&Sequence_1",
+        "strBody&Sequence_1",
+        "datatable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

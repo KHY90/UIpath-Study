@@ -1,48 +1,42 @@
 ﻿<html>
 <head>
-<style>
-    body {{
-        font-family: '맑은 고딕', Arial, sans-serif;
-        font-size: 14px;
-        color: #333333;
-    }}
-    h2 {{
-        color: #2E6DA4;
-    }}
-    table {{
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-    }}
-    th {{
-        background-color: #D1E0FF;
-        color: #000000;
-        padding: 8px;
-        border: 1px solid #cccccc;
-        text-align: center;
-    }}
-    td {{
-        padding: 8px;
-        border: 1px solid #cccccc;
-        text-align: center;
-    }}
-    tr:nth-child(even) {{
-        background-color: #f9f9f9;
-    }}
-    .status-success {{
-        color: #007BFF;
-        font-weight: bold;
-    }}
-    .status-fail {{
-        color: #FF0000;
-        font-weight: bold;
-    }}
-</style>
+    <style>
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }}
+        th {{
+            background-color: #F2F6FC;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            text-align: center;
+        }}
+        td {{
+            padding: 8px;
+            border: 1px solid #cccccc;
+            text-align: center;
+        }}
+        tr:nth-child(even) {{
+            background-color: #f9f9f9;
+        }}
+    </style>
 </head>
-<body>
-    <h2>📊 김화연 자동화 미션 결과 보고서</h2>
-    <p>안녕하세요,<br/>아래는 {0} 처리된 자동화 결과입니다.</p> 
-    {1}
-    <p style='margin-top:20px;'>감사합니다.<br/><b>RPA Bot</b></p>
+  <body style="font-family:'맑은 고딕', Arial, sans-serif; font-size:14px; color:#061040;">
+    <h2 style="color:#004ee1;">📊 {0} 자동화 미션 결과 보고서</h2>
+    <p>안녕하세요,<br/>아래는 처리된 자동화 결과입니다.</p>
+    
+    <br/>
+
+    <p><b>📌 합격여부 테이블</b></p>
+    <div>{1}</div>
+
+    <p><b>📌 과목별 합격률 테이블</b></p>
+    <div>{2}</div>
+
+    <br/>
+   
+    <p style="margin-top:20px;">감사합니다.<br/><b>개발자 김화연 드림</b></p>
 </body>
 </html>

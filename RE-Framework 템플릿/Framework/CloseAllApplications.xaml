@@ -95,7 +95,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="830,1100" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="830,871" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="listProgram" />
     </Sequence.Variables>
@@ -113,25 +113,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="종료 | Sequence" sap:VirtualizedContainerService.HintSize="502,941" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="종료 | Sequence" sap:VirtualizedContainerService.HintSize="502,712" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="메일발송 | Sequence" sap:VirtualizedContainerService.HintSize="468,229" sap2010:WorkflowViewState.IdRef="Sequence_5">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\04_메일발송.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\04_메일발송.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionData">[in_dt_TransactionData]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
-      </Sequence>
       <Sequence DisplayName="프로그램 종료 | Sequence" sap:VirtualizedContainerService.HintSize="468,620" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

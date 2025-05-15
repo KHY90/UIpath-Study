@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_02_DT추출" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_02_DT추출" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_dtResult" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
@@ -52,6 +52,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,13 +119,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_DT추출" sap:VirtualizedContainerService.HintSize="830,1814" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_DT추출" sap:VirtualizedContainerService.HintSize="830,2807" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DT 추출 시작&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DT 추출 시작&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -132,13 +133,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="DT추출 | Sequence" sap:VirtualizedContainerService.HintSize="552,1686" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="DT추출 | Sequence" sap:VirtualizedContainerService.HintSize="592,2679" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="out_dtResult 초기화" DisplayName="DT초기화 | Assign" sap:VirtualizedContainerService.HintSize="518,146" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap2010:Annotation.AnnotationText="out_dtResult 초기화" DisplayName="DT초기화 | Assign" sap:VirtualizedContainerService.HintSize="558,146" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[out_dtResult]</OutArgument>
         </Assign.To>
@@ -151,22 +152,22 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 네이버 가격비교" sap:VirtualizedContainerService.HintSize="518,1448" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 네이버 가격비교" sap:VirtualizedContainerService.HintSize="558,2441" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,1167" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524,2200" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="**변수**&#xA;in_TransactionItem(&quot;검색상품&quot;).ToString : 모니터, 세탁기, 냉장고" DisplayName="DT추출 전 작업 | Sequence" sap:VirtualizedContainerService.HintSize="450,473" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap2010:Annotation.AnnotationText="**변수**&#xA;in_TransactionItem(&quot;검색상품&quot;).ToString : 모니터, 세탁기, 냉장고" DisplayName="DT추출 전 작업 | Sequence" sap:VirtualizedContainerService.HintSize="490,101" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
@@ -201,82 +202,116 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Delay>
-                <uix:NSelectItem DisplayName="Select Item '80개씩 보기'" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="80개씩 보기" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
-                  <uix:NSelectItem.Items>
-                    <scg:List x:TypeArguments="x:String" Capacity="50">
-                      <x:String>20개씩 보기</x:String>
-                      <x:String>40개씩 보기</x:String>
-                      <x:String>60개씩 보기</x:String>
-                      <x:String>80개씩 보기</x:String>
-                      <x:String>흰둥이90</x:String>
-                      <x:String></x:String>
-                      <x:String></x:String>
-                      <x:String>1</x:String>
-                      <x:String></x:String>
-                      <x:String>보조모니터</x:String>
-                      <x:String>피벗모니터</x:String>
-                      <x:String>4k모니터</x:String>
-                      <x:String>40인치모니터</x:String>
-                      <x:String>스피커내장모니터</x:String>
-                      <x:String>리퍼모니터</x:String>
-                      <x:String>219모니터</x:String>
-                      <x:String>29인치모니터</x:String>
-                      <x:String>모니터36인치</x:String>
-                      <x:String>24인치fhd모니터</x:String>
-                      <x:String>lionine모니터</x:String>
-                      <x:String>미니모니터</x:String>
-                      <x:String>모니터34인치</x:String>
-                      <x:String>뷰소닉모니터</x:String>
-                      <x:String>샤오미모니터</x:String>
-                      <x:String>디지털/가전</x:String>
-                      <x:String>생활/건강</x:String>
-                      <x:String>가구/인테리어</x:String>
-                      <x:String>스포츠/레저</x:String>
-                      <x:String>패션잡화</x:String>
-                      <x:String>출산/육아</x:String>
-                      <x:String>패션의류</x:String>
-                      <x:String>화장품/미용</x:String>
-                      <x:String>식품</x:String>
-                      <x:String>여가/생활편의</x:String>
-                      <x:String>삼성전자</x:String>
-                      <x:String>LG전자</x:String>
-                      <x:String>알파스캔</x:String>
-                      <x:String>한성컴퓨터</x:String>
-                      <x:String>DELL</x:String>
-                      <x:String>벤큐</x:String>
-                      <x:String>필립스</x:String>
-                      <x:String>MSI</x:String>
-                      <x:String>클라인즈</x:String>
-                      <x:String>주연테크</x:String>
-                      <x:String>크로스오버존</x:String>
-                      <x:String>HP</x:String>
-                      <x:String>ASUS</x:String>
-                      <x:String>인터픽셀</x:String>
-                      <x:String>제이씨현시스템</x:String>
-                      <x:String>비트엠</x:String>
-                    </scg:List>
-                  </uix:NSelectItem.Items>
-                  <uix:NSelectItem.Target>
-                    <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/search/all" DesignTimeRectangle="1726, 1323, 196, 52" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='40개씩 보기' aria-role='button' tag='A' /&gt;" Guid="d75c1c6a-bc3f-48a4-a2a2-7eec40343046" ImageBase64="" InformativeScreenshot="d562608710fe293ab3d27ce225b368da.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                  </uix:NSelectItem.Target>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NSelectItem DisplayName="Select Item '80개씩 보기'" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="80개씩 보기" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
+                        <uix:NSelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="50">
+                            <x:String>20개씩 보기</x:String>
+                            <x:String>40개씩 보기</x:String>
+                            <x:String>60개씩 보기</x:String>
+                            <x:String>80개씩 보기</x:String>
+                            <x:String>흰둥이90</x:String>
+                            <x:String></x:String>
+                            <x:String></x:String>
+                            <x:String>1</x:String>
+                            <x:String></x:String>
+                            <x:String>보조모니터</x:String>
+                            <x:String>피벗모니터</x:String>
+                            <x:String>4k모니터</x:String>
+                            <x:String>40인치모니터</x:String>
+                            <x:String>스피커내장모니터</x:String>
+                            <x:String>리퍼모니터</x:String>
+                            <x:String>219모니터</x:String>
+                            <x:String>29인치모니터</x:String>
+                            <x:String>모니터36인치</x:String>
+                            <x:String>24인치fhd모니터</x:String>
+                            <x:String>lionine모니터</x:String>
+                            <x:String>미니모니터</x:String>
+                            <x:String>모니터34인치</x:String>
+                            <x:String>뷰소닉모니터</x:String>
+                            <x:String>샤오미모니터</x:String>
+                            <x:String>디지털/가전</x:String>
+                            <x:String>생활/건강</x:String>
+                            <x:String>가구/인테리어</x:String>
+                            <x:String>스포츠/레저</x:String>
+                            <x:String>패션잡화</x:String>
+                            <x:String>출산/육아</x:String>
+                            <x:String>패션의류</x:String>
+                            <x:String>화장품/미용</x:String>
+                            <x:String>식품</x:String>
+                            <x:String>여가/생활편의</x:String>
+                            <x:String>삼성전자</x:String>
+                            <x:String>LG전자</x:String>
+                            <x:String>알파스캔</x:String>
+                            <x:String>한성컴퓨터</x:String>
+                            <x:String>DELL</x:String>
+                            <x:String>벤큐</x:String>
+                            <x:String>필립스</x:String>
+                            <x:String>MSI</x:String>
+                            <x:String>클라인즈</x:String>
+                            <x:String>주연테크</x:String>
+                            <x:String>크로스오버존</x:String>
+                            <x:String>HP</x:String>
+                            <x:String>ASUS</x:String>
+                            <x:String>인터픽셀</x:String>
+                            <x:String>제이씨현시스템</x:String>
+                            <x:String>비트엠</x:String>
+                          </scg:List>
+                        </uix:NSelectItem.Items>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/search/all" DesignTimeRectangle="1726, 1323, 196, 52" DesignTimeScaleFactor="2" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='40개씩 보기' aria-role='button' tag='A' /&gt;" Guid="d75c1c6a-bc3f-48a4-a2a2-7eec40343046" ImageBase64="" InformativeScreenshot="d562608710fe293ab3d27ce225b368da.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        </uix:NSelectItem.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NSelectItem>
+                    </Sequence>
+                  </ui:CommentOut.Body>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </uix:NSelectItem>
-                <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll '검색결과‘모니터’ 에 대한 검색 결과 입니…'" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="100" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
-                  <uix:NMouseScroll.Target>
-                    <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/search/all" DesignTimeRectangle="118, 271, 2640, 4682" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='style_inner__hZkBc' parentid='container' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='style_inner__hZkBc' parentid='container' tag='DIV' type='' aaname='' check:innerText='검색결과&amp;#xA;‘모니터’ 에 대한 검색 결과 입니다.&amp;#xA;검색 도구&amp;#xA;카테고리&amp;#xA;더보기&amp;#xA;디지털/가전&amp;#xA;생활/건강&amp;#xA;가구/인테리어&amp;#xA;스포츠/레저&amp;#xA;패션잡화&amp;#xA;출산/육아&amp;#xA;패션의류&amp;#xA;화장품/미용&amp;#xA;식품&amp;#xA;여가' /&gt;" Guid="1e8ecec2-0a98-4fde-bd40-8ee20f0ff2f4" InformativeScreenshot="041fb7819d4cc4c38888674c6265200f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
-                  </uix:NMouseScroll.Target>
+                </ui:CommentOut>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll '검색결과‘모니터’ 에 대한 검색 결과 입니…'" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="100" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
+                        <uix:NMouseScroll.Target>
+                          <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/search/all" DesignTimeRectangle="118, 271, 2640, 4682" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='style_inner__hZkBc' parentid='container' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='style_inner__hZkBc' parentid='container' tag='DIV' type='' aaname='' check:innerText='검색결과&amp;#xA;‘모니터’ 에 대한 검색 결과 입니다.&amp;#xA;검색 도구&amp;#xA;카테고리&amp;#xA;더보기&amp;#xA;디지털/가전&amp;#xA;생활/건강&amp;#xA;가구/인테리어&amp;#xA;스포츠/레저&amp;#xA;패션잡화&amp;#xA;출산/육아&amp;#xA;패션의류&amp;#xA;화장품/미용&amp;#xA;식품&amp;#xA;여가' /&gt;" Guid="1e8ecec2-0a98-4fde-bd40-8ee20f0ff2f4" InformativeScreenshot="041fb7819d4cc4c38888674c6265200f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                        </uix:NMouseScroll.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NMouseScroll>
+                    </Sequence>
+                  </ui:CommentOut.Body>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </uix:NMouseScroll>
+                </ui:CommentOut>
                 <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="Delay_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -286,34 +321,178 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </Delay>
               </Sequence>
-              <Sequence sap2010:Annotation.AnnotationText="**DT 추출**&#xA;상품명&#xA;상품 Url&#xA;가격" DisplayName="DT추출 | Sequence" sap:VirtualizedContainerService.HintSize="450,353" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,1987" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <Sequence sap2010:Annotation.AnnotationText="**DT 추출**&#xA;상품명&#xA;상품 Url&#xA;가격" DisplayName="DT추출 | Sequence" sap:VirtualizedContainerService.HintSize="488,1354" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dtResult]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='상품 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='가격'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='href'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' text='원' idx='1' /&gt;&lt;webctrl tag='em' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="454,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?adQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;origQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;pagingIndex=1&amp;pagingSize=80&amp;productSet=model&amp;query=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;sort=rel&amp;timestamp=&amp;viewType=list" DesignTimeRectangle="158, 609, 1880, 24982" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='basicList_list_basis__XVx_G' parentid='content' tag='DIV' /&gt;" Guid="eb59fc41-1442-49bd-b0dc-f0838e4eca97" InformativeScreenshot="e944333dfd8a709c8dcdbfb80d1f4814.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                    </uix:NExtractData>
+                    <If Condition="[out_dtResult.RowCount &lt; 50]" sap:VirtualizedContainerService.HintSize="454,1028" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap2010:Annotation.AnnotationText="추출한 DT의 행이 50개 미만인 경우 BRE 발생" DisplayName="Then" sap:VirtualizedContainerService.HintSize="452,808" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:IfElseIfV2 Condition="[in_TransactionItem(&quot;검색상품&quot;).ToString.Contains(&quot;모니터&quot;)]" DisplayName="Else if" sap:VirtualizedContainerService.HintSize="418,717" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                            <ui:IfElseIfV2.Else>
+                              <Sequence sap2010:Annotation.AnnotationText="SE 발생 시" DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,205" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Throw Exception="[New Exception(in_TransactionItem(&quot;검색상품&quot;).ToString.Trim + &quot; DT 행 수 부족&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                              </Sequence>
+                            </ui:IfElseIfV2.Else>
+                            <ui:IfElseIfV2.ElseIfs>
+                              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_TransactionItem(&quot;검색상품&quot;).ToString.Contains(&quot;냉장고&quot;)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+                                  <ui:IfElseIfBlock.Then>
+                                    <Sequence sap2010:Annotation.AnnotationText="BRE 발생 시" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,205" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Throw Exception="[New BusinessRuleException(in_TransactionItem(&quot;검색상품&quot;).ToString.Trim + &quot; DT 행 수 부족&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_1">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Throw>
+                                    </Sequence>
+                                  </ui:IfElseIfBlock.Then>
+                                </ui:IfElseIfBlock>
+                              </sc:BindingList>
+                            </ui:IfElseIfV2.ElseIfs>
+                            <ui:IfElseIfV2.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </ui:IfElseIfV2.Then>
+                          </ui:IfElseIfV2>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="452,90" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                    <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="488,165" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="454,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;DT추출 단계 : &quot; + Exception.Message]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <Rethrow sap:VirtualizedContainerService.HintSize="454,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                  <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="488,165" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="454,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;DT추출 단계 : &quot; + Exception.Message]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <Rethrow sap:VirtualizedContainerService.HintSize="454,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+                <TryCatch.Finally>
+                  <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="488,90" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </TryCatch.Finally>
+              </TryCatch>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="490,50" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,337" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="**인수**&#xA;out_dtResult&#xA;in_TransactionItem&#xA;---------------------------------------------------------&#xA;out_dtResult의 Row수가 30 이상이면 in_TransactionItem(&quot;수행결과&quot;) = &quot;성공&quot;&#xA;out_dtResult의 Row수가 30 미만이면 &#xA;in_TransactionItem(&quot;수행결과&quot;) = &quot;실패&quot;" DisplayName="Jobs\02_01_수행결과.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\02_01_수행결과.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtResult">[out_dtResult]</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem">[in_TransactionItem]</OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </ui:CommentOut.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dtResult]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='상품 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='가격'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='href'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' text='원' idx='1' /&gt;&lt;webctrl tag='em' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="09e5fbd4-7e68-4fe8-8288-1f74df8a3e66" Version="V4">
-                  <uix:NExtractData.Target>
-                    <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?adQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;origQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;pagingIndex=1&amp;pagingSize=80&amp;productSet=model&amp;query=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;sort=rel&amp;timestamp=&amp;viewType=list" DesignTimeRectangle="158, 609, 1880, 24982" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='basicList_list_basis__XVx_G' parentid='content' tag='DIV' /&gt;" Guid="eb59fc41-1442-49bd-b0dc-f0838e4eca97" InformativeScreenshot="e944333dfd8a709c8dcdbfb80d1f4814.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                  </uix:NExtractData.Target>
-                </uix:NExtractData>
-              </Sequence>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="**인수**&#xD;&#xA;out_dtResult&#xD;&#xA;in_TransactionItem&#xD;&#xA;---------------------------------------------------------&#xD;&#xA;out_dtResult의 Row수가 30 이상이면 in_TransactionItem(&quot;수행결과&quot;) = &quot;성공&quot;&#xD;&#xA;out_dtResult의 Row수가 30 미만이면 &#xD;&#xA;in_TransactionItem(&quot;수행결과&quot;) = &quot;실패&quot;" DisplayName="Jobs\02_01_수행결과.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,279" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\02_01_수행결과.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtResult">
-                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="out_dtResult" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem">
-                    <VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
-                  </OutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InvokeWorkflowFile>
+              </ui:CommentOut>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
@@ -322,7 +501,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;DT추출 종료&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;DT추출 종료&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

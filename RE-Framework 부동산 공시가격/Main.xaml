@@ -107,7 +107,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="876,615.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="888,615.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -262,7 +262,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="//실질적으로 반복 작업을 수행" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="209,109" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="//실질적으로 반복 작업을 수행" DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="516,3795" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="470,3343" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -415,7 +415,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Transaction실패(BRE)기록 - Invoke Workflow File (Jobs\Transaction실패(BRE)기록.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Jobs\Transaction실패(BRE)기록.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_intFailCnt">[intFailCnt]</InOutArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_intBRECnt">[intBRECnt]</InOutArgument>
                                     <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_TransactionItem">[TransactionItem]</InOutArgument>
                                     <InOutArgument x:TypeArguments="scg:ICollection(x:String)" x:Key="io_lstFailCategory">[lstFailCategory]</InOutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
@@ -574,7 +574,7 @@
                 <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">597.2,710 597.2,818.04 905,818.04 905,109.2 756,109.2</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">597.2,710 597.2,739.2 786,739.2 786,109.2 756,109.2</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">23</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -873,7 +873,7 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05_메일발송 - Invoke Workflow File (Jobs\05_메일발송.xaml)" sap:VirtualizedContainerService.HintSize="384,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Jobs\05_메일발송.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intFailCnt">[intFailCnt]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intFailCnt">[intBRECnt]</InArgument>
                                             <InArgument x:TypeArguments="x:Int32" x:Key="in_intSuccessCnt">[intSuccessCnt]</InArgument>
                                             <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
                                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
@@ -970,7 +970,7 @@
                 <Transition sap2010:Annotation.AnnotationText="Business Rule Exception" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="448.8,537.6" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">649.45,710 649.45,774.04 861,774.04 861,348.5 753.5,348.5</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">649.45,710 649.45,738.5 783.5,738.5 783.5,348.5 753.5,348.5</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1029,6 +1029,7 @@
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <StateMachine.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="intSECnt" />
       <Variable x:TypeArguments="sd:DataRow" sap2010:Annotation.AnnotationText="Transaction item to be processed. The type of this variable can be changed to match the transaction type in the process. For example, when processing data from a spreadsheet that is read into a DataTable, this type can be changed to DataRow. " Name="TransactionItem" />
       <Variable x:TypeArguments="s:Exception" sap2010:Annotation.AnnotationText="Used during transitions between states to represent exceptions other than business exceptions." Name="SystemException" />
       <Variable x:TypeArguments="ui:BusinessRuleException" sap2010:Annotation.AnnotationText="Used during transitions between states and represents a situation that does not conform to the rules of the process being automated." Name="BusinessException" />
@@ -1044,7 +1045,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dtCheck" />
       <Variable x:TypeArguments="x:Int32" Name="intSuccessCnt" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="lstSuccessCategory" />
-      <Variable x:TypeArguments="x:Int32" Name="intFailCnt" />
+      <Variable x:TypeArguments="x:Int32" Name="intBRECnt" />
       <Variable x:TypeArguments="scg:ICollection(x:String)" Name="lstFailCategory" />
     </StateMachine.Variables>
   </StateMachine>

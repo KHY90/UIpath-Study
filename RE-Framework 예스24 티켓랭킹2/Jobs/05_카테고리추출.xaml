@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_04_03_카테고리추출" sap:VirtualizedContainerService.HintSize="830,1892" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_04_03_카테고리추출" sap:VirtualizedContainerService.HintSize="852,1892" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtCategory" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="lstCategory" />
@@ -207,49 +207,66 @@
           <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAT5SURBVGhD1ZrPSytXFMdPMvN8PhsbsA0Usa3S8gzFgvUlry4EN10IKrrQgouK2YgLfyBYKuLGdqEiiFixtv4BokIRtS6ELqogKi7cCKULoeAPVJ7UHxhq1VPOtUlnzp1k5k5iX/3CB5I75975TubOvefeCUB6lA8AEQD4AQB+AYADALgEAPwH+kxldIxiKJbqvFblAsBXALBjMKoK1aU2qK3/TB8AwPcAcG1hyC3UFrVJbT+YngHA1wDwp4WBdEFt0znoXGnVxwDwq8UJHwo6F50zLWoEgKjFSR4aOiedOyV9adGwYzK9gM+85jL6TuU8NgnkwZVSMu/XAH8KavjNu15T+XcFXvzxuSbF26B8EXTreCOOCTwB/K1YQyzV8eiFji99HlH+bb4Xoy91vC3VcfA984U5wHF3oocnpT7/YaYH//pUFxfwKqTjEw+gBwDnC+8vivj8rfuLUoA82T7YNHylPNq0veONG10v0jD/qQefZ3rw90/uy/4I6/jF28oXQJC3pEMsjcG8kjKlPg+ehHQ8fmH+pX/+SMOLsI5LQeVnwAh5tBTNgmmZpN7UAD/ze/D9p4A+7d9y+hwJePENtVGIQx4tZ2yaynlwUjRNw6amJonc3Fwp1khBQYFUh8jOzpZiE0BeTaJkSjm3CYVCaKWioiIp1sjAwACvgjc3N+jz+aTYBJBXUwJIGSEPsqWrq4v7wNPTU/R4kj+gGxsbvBqur69LcTaQ57hcpcSLi4vcB87NzUlxRvx+P97e3vJqODg4KMXaQJ6FaGHBD9pC/f/s7Iz7EHeFxxqpqqriVYSonMc6QCyKaHXED9iSqP+Hw2Ep1sjIyAivIu4I3Rke6wDyLpZ4/IAtVv3/8vISdV2XYo1sb2/zari1tSXFOYS8i3UqP2CLVf9fXl6W4owEAgFeRWh4eFiKdQh5F4ttfiApXq/Xsv/39vZKsUYaGhp4FaHa2lop1iHk3bR74IhgMMg9CJWXl0uxRmZnZ3kVvLu7w5ycHCnWIeRdKrSlvr6e+xBGsrKypNgYNDtfX1/zauKZ4LGKSAW2tLe3cx+4v78vxRmZnJzkVYTGxsakWEXUu1BPTw/3gcfHx1JcjJqaGnGHrFRXVyfFKyC6kPJD3NzczH0IlZSUSLGNjY0YjUZ5aFw0MvE6CoiHWHkYLSsr4z6E9vb2sLW1VfyqNE9sbm7yEJN2dnakthURw6jyREZpxNHREfejrNHRUaltRcRE5iqV6Ojo4H4SanV1lRcJVVRUSO0qIlIJV8kcpcwTExPck0kHBwdYXV2N09PT/BAeHh6KO8nbVSS+w+0qnSYqKytFWkHrANLFxQWurKxgW1ubmBcKCwvFYoXLbtZ2QDydJrla0NiRkZFh2X1OTk7cZp9GTAsaV0vKZND6lhY3VopEIlK8ItKSkqS8qO/r68Pi4mKR3MXK8vLysLOzU8zMVpqampLacYG0qCcpbasYEzrq97u7u7ZD69raWtJ8ySEJt1VIjje2WlpauL+kWlpaSod5IuHGFsnx1uLMzAz3aKmrqyvs7u5Ox5BJ2G4tkmw3d2kOoJEkmc7Pz3F8fNx2k0sBR5u7MSXdXqeu0N/fjwsLC2I9Szk95T3z8/M4NDQkVlhp6i5GHG+vx5TSC440o/yCI6b/w0W4Nh/To37JF9Ojfs0a06N+0W3Uo/2rAdej/bOHlV7b323+BjvTp4vsVuOSAAAAAElFTkSuQmCC" InformativeScreenshot="8151e4e80a9260cc15f3c1f842639c62.jpg" Selector="&lt;html app='chrome.exe' title='예스24 티켓' /&gt;" Url="http://ticket.yes24.com/New/Rank/Ranking.aspx" Version="V2" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
-      <ui:IfElseIfV2 Condition="[in_TransactionItem(&quot;카테고리&quot;).ToString.Contains(&quot;스포츠&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="538,57" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
-        <ui:IfElseIfV2.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="538,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="452,715" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </ui:IfElseIfV2.Else>
-        <ui:IfElseIfV2.ElseIfs>
-          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not lstCategory.Contains(in_TransactionItem(&quot;카테고리&quot;).ToString)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
-              <ui:IfElseIfBlock.Then>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <ui:IfElseIfV2 Condition="[in_TransactionItem(&quot;카테고리&quot;).ToString.Contains(&quot;스포츠&quot;)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="418,655" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+              <ui:IfElseIfV2.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[New BusinessRuleException(in_TransactionItem(&quot;카테고리&quot;).ToString + &quot; 은(는) 페이지에 존재하지 않는 카테고리입니다.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
-              </ui:IfElseIfBlock.Then>
-            </ui:IfElseIfBlock>
-          </sc:BindingList>
-        </ui:IfElseIfV2.ElseIfs>
+              </ui:IfElseIfV2.Else>
+              <ui:IfElseIfV2.ElseIfs>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Not lstCategory.Contains(in_TransactionItem(&quot;카테고리&quot;).ToString)]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New BusinessRuleException(in_TransactionItem(&quot;카테고리&quot;).ToString + &quot; 은(는) 페이지에 존재하지 않는 카테고리입니다.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIfV2.ElseIfs>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:IfElseIfV2.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New Exception(in_TransactionItem(&quot;카테고리&quot;).ToString + &quot; 은(는) 페이지에 존재하지 않는 카테고리입니다.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                </Sequence>
+              </ui:IfElseIfV2.Then>
+            </ui:IfElseIfV2>
+          </Sequence>
+        </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:IfElseIfV2.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Throw Exception="[New Exception(in_TransactionItem(&quot;카테고리&quot;).ToString + &quot; 은(는) 페이지에 존재하지 않는 카테고리입니다.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
-          </Sequence>
-        </ui:IfElseIfV2.Then>
-      </ui:IfElseIfV2>
+      </ui:CommentOut>
       <If sap2010:Annotation.AnnotationText="메일 본문에서 가져온 카테고리와 웹페이지의 카테고리가 일치하는지 검증 -&gt; 실패 시 BRE" Condition="[Not lstCategory.Contains(in_TransactionItem(&quot;카테고리&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="538,438" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

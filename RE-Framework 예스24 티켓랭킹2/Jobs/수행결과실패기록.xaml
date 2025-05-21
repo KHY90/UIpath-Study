@@ -90,7 +90,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="수행결과실패기록" sap:VirtualizedContainerService.HintSize="830,1091" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="수행결과실패기록" sap:VirtualizedContainerService.HintSize="852,1091" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,7 +103,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="성공 시 intSuccessCnt 증가" sap:VirtualizedContainerService.HintSize="434,146" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="434,146" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[io_intFailCnt]</OutArgument>
         </Assign.To>

@@ -1,0 +1,33 @@
+{
+  "DisplayName": "GetChosung",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "TargetString",
+      "DisplayName": "TargetString",
+      "Category": null,
+      "Tooltip": "초성을 추출할 String 값",
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "InitWord",
+      "DisplayName": "InitWord",
+      "Category": null,
+      "Tooltip": "추출한 초성 값",
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

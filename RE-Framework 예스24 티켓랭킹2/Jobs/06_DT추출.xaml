@@ -124,7 +124,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="_04_DT추출_및_1차가공" sap:VirtualizedContainerService.HintSize="830,3006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="_04_DT추출_및_1차가공" sap:VirtualizedContainerService.HintSize="852,3006" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrAddColumn" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtRankingTable" />
@@ -290,13 +290,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="452,536" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="452,485" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="&quot;시작일&quot;,&quot;종료일&quot;,&quot;장소&quot; 컬럼 추가" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="418,476" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrAddColumn]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="&quot;시작일&quot;,&quot;종료일&quot;,&quot;장소&quot; 컬럼 추가" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="418,425" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrAddColumn]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>

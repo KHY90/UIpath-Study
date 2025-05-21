@@ -1,0 +1,21 @@
+{
+  "DisplayName": "InitFolder",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "FolderName",
+      "DisplayName": "FolderName",
+      "Category": null,
+      "Tooltip": "초기화할 폴더명 입력",
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

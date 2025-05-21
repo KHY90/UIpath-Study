@@ -44,7 +44,6 @@
       "ArgumentsSectionElementsOrder": [
         "in_arrCategory",
         "io_dtMergeEmailTable",
-        "out_dtMerge",
         "in_TransactionItem",
         "in_Config"
       ],

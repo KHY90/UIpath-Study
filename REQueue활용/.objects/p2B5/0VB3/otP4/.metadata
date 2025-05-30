@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome 네이버 가격비교",
+  "Type": "Screen",
+  "Id": "otP4x2l-aEa7hcx2KI20sQ",
+  "Reference": "nsnLcJLikUW8tLg_xNb5lQ/otP4x2l-aEa7hcx2KI20sQ",
+  "ParentRef": "nsnLcJLikUW8tLg_xNb5lQ/0VB3p5xNs02pFBslX_t3tg",
+  "Created": "2025-05-30T01:19:57.7656413Z",
+  "Updated": "2025-05-30T01:19:57.7656413Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

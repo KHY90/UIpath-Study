@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome 네이버 가격비교",
+  "Type": "App",
+  "Id": "tc9Ah2PWAU-sqy874u84Cg",
+  "Reference": "N25O9DRc0E6juajqV7lCJQ/tc9Ah2PWAU-sqy874u84Cg",
+  "Created": "2025-05-30T02:13:53.5856076Z",
+  "Updated": "2025-05-30T02:13:53.5856076Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

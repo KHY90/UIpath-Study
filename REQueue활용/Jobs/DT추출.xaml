@@ -1,0 +1,170 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DT추출" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>DT추출_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DT추출" sap:VirtualizedContainerService.HintSize="810,1146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strSearch" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strSearch]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("검색어").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,123" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strSearch]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome 네이버 가격비교" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,885" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="adf92c14-ea80-4d75-a8ab-a975ec04cdcd" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,644" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="adf92c14-ea80-4d75-a8ab-a975ec04cdcd" Text="[strSearch + &quot;[k(Enter)]&quot;]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="search.shopping.naver.com/home" CVScreenId="a2cb1694-93cb-4c51-8a28-92d920d6f532" ContentHash="hdKUP2pqKEW79P-IV4jLow" CvElementArea="415, 354, 999, 88" CvType="InputBox" DesignTimeRectangle="454, 359, 734, 80" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' /&gt;" Guid="06fda017-d54d-46e4-a265-60043813a0d2" InformativeScreenshot="6a17b95a377ac52e0a25668dd968ad7a.png" Reference="nsnLcJLikUW8tLg_xNb5lQ/2dOXWU0ToUCCeoFcoYVC9g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='네이버 가격비교' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="a2cb1694-93cb-4c51-8a28-92d920d6f532" CvTextArea="163, 375, 208, 46" CvTextArgument="N 72817" CvType="Text" DesignTimeRectangle="158, 377, 212, 44" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h1&amp;gt;a&amp;gt;svg' tag='svg' /&gt;" Guid="01f73be5-6e8e-4e26-89c5-26c88fbb4236" SearchSteps="Selector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품명'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='상품명 Url'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='가격'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' text='원' idx='1' /&gt;&lt;webctrl tag='em' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="adf92c14-ea80-4d75-a8ab-a975ec04cdcd" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?adQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;origQuery=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;pagingIndex=1&amp;pagingSize=40&amp;productSet=total&amp;query=%EB%AA%A8%EB%8B%88%ED%84%B0&amp;sort=rel&amp;timestamp=&amp;viewType=list" DesignTimeRectangle="158, 1193, 1880, 2870" DesignTimeScaleFactor="2" FullSelectorArgument="&lt;webctrl class='basicList_list_basis__XVx_G' parentid='content' tag='DIV' /&gt;" Guid="6039132f-69ea-4bb7-b3ff-f036e4a96246" InformativeScreenshot="10d3d0a724b4489127884dd065883118.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 가격비교' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="416,141" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[strSearch]" WorkbookPath="Data\Output\네이버큐.xlsx" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-13, -13, 2906, 1730" BrowserType="Chrome" ContentHash="4Fh-ScLPvEGcVPeBBkgHBA" IconBase64="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" InformativeScreenshot="a0f80fcf54e770609fb27450581d1bd2.jpg" Reference="nsnLcJLikUW8tLg_xNb5lQ/otP4x2l-aEa7hcx2KI20sQ" Selector="&lt;html app='chrome.exe' title='네이버 가격비교' /&gt;" Url="https://search.shopping.naver.com/home" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

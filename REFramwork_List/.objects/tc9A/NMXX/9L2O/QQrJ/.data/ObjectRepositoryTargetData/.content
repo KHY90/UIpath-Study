@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YpygAQWVEEOz50FGnOKgxQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="search.shopping.naver.com/home" CVScreenId="008a494b-9ceb-418b-8f37-2e7fcbf2135f" CvElementArea="415, 354, 999, 88" CvType="InputBox" DesignTimeRectangle="454, 359, 734, 80" ElementType="InputBox" FullSelectorArgument="&lt;webctrl parentid='gnb-gnb' tag='INPUT' type='text' /&gt;" Guid="2b03cca2-1d73-428a-b864-528a498f886a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='네이버 가격비교' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="008a494b-9ceb-418b-8f37-2e7fcbf2135f" CvTextArea="207, 375, 164, 46" CvTextArgument="72817" CvType="Text" DesignTimeRectangle="253, 379, 116, 40" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h1&amp;gt;a&amp;gt;svg&amp;gt;path' idx='3' parentid='gnb-gnb' tag='path' /&gt;" Guid="6af4c6b9-95d5-442c-97f4-8aa4cebd5b42" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f8d28553984207795259515706b2da22.png" xmlns="">00Y5DXIJJHkGfMo7w4kUDAA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
